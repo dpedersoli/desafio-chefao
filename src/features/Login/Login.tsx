@@ -48,7 +48,7 @@ export default function SignIn() {
   const classes = useStyles();
   const dispatch = useDispatch();
   const history = useHistory();
-  const [name, setName] = useState('tonynguyen');
+  const [name, setName] = useState('Daniel');
   const [role, setRole] = useState('ADMIN');
 
   const _onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
