@@ -1,10 +1,10 @@
-import Router from './routes'
+import { AppRoutes } from './routes'
 
 function App() {
 
   return (
     <div className="min-h-screen flex justify-center items-center">
-      <Router />
+      <AppRoutes />
     </div>
   );
 }

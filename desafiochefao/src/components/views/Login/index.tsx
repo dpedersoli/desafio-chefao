@@ -14,9 +14,10 @@
   }
   ```
 */
-import { LockClosedIcon } from '@heroicons/react/solid'
+// import { LockClosedIcon } from '@heroicons/react/solid'
 
-export default function Example() {
+
+export default function Login() {
   return (
     <>
       {/*
@@ -28,14 +29,14 @@ export default function Example() {
         ```
       */}
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-md w-full space-y-8">
+        <div className="w-full space-y-8 ">
           <div>
             <img
               className="mx-auto h-12 w-auto"
               src="src\components\views\Login\images\logo-Daniel-Pedersoli.png"
               alt="Workflow"
             />
-            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Entre com sua conta</h2>
+            <p className="mt-6 text-center text-2xl font-bold text-gray-900">Como é bom te ver por aqui</p>
             {/* <p className="mt-2 text-center text-sm text-gray-600">
               Or{' '}
               <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
@@ -43,20 +44,23 @@ export default function Example() {
               </a>
             </p> */}
           </div>
+
           <form className="mt-8 space-y-6" action="#" method="POST">
+
             <input type="hidden" name="remember" defaultValue="true" />
-            <div className="rounded-md shadow-sm -space-y-px">
+            <div className="rounded-md -space-y-px">
               <div>
                 <label htmlFor="email-address" className="sr-only">
                   Email address
                 </label>
+                <p className="text-sm py-1">Email</p>
                 <input
                   id="email-address"
                   name="email"
                   type="email"
                   autoComplete="email"
                   required
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  className="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm shadow-sm"
                   placeholder="Email"
                 />
               </div>
@@ -64,19 +68,20 @@ export default function Example() {
                 <label htmlFor="password" className="sr-only">
                   Password
                 </label>
+                <p className="text-sm py-1">Senha</p>
                 <input
                   id="password"
                   name="password"
                   type="password"
                   autoComplete="current-password"
                   required
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm shadow-sm"
                   placeholder="Senha"
                 />
               </div>
             </div>
 
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <input
                   id="remember-me"
@@ -88,17 +93,9 @@ export default function Example() {
                   Lembrar de mim
                 </label>
               </div>
-            </div>
-
-            <div className="flex items-center justify-between">
               <div className="text-sm">
                 <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                  Esqueceu a senha?
-                </a>
-              </div>
-              <div className="text-sm">
-                <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                  Criar uma conta
+                  Esqueci a senha?
                 </a>
               </div>
             </div>
@@ -108,11 +105,20 @@ export default function Example() {
                 type="submit"
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
-                <span className="absolute left-0 inset-y-0 flex items-center pl-3">
+                {/* <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                   <LockClosedIcon className="h-5 w-5 text-Slate-50 group-hover:text-Zinc-50" aria-hidden="true" />
-                </span>
+                </span> */}
                 Entrar
               </button>
+
+              <div className="flex items-center justify-center text-sm pt-4">
+                Ainda não possui uma conta?
+                <div className="text-sm px-1">
+                  <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+                    Criar
+                  </a>
+                </div>
+              </div>
             </div>
           </form>
         </div>
