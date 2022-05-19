@@ -1,51 +1,11 @@
-/*
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
-// import { LockClosedIcon } from '@heroicons/react/solid'
-
-
 export default function Login() {
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-gray-50">
-        <body class="h-full">
-        ```
-      */}
-      <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="w-full space-y-8 ">
-          <div>
-            <img
-              className="mx-auto h-12 w-auto"
-              src="src\components\views\Login\images\logo-Daniel-Pedersoli.png"
-              alt="Workflow"
-            />
-            <p className="mt-6 text-center text-2xl font-bold text-gray-900">Olá!
-              <br />
-              Que bom te ver por aqui!
+      <div className="min-h-full w-96 max-w-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div className="w-full space-y-8 flex flex-col">
+          <div className="flex flex-col justify-evenly">
+            <p className="mt-6 text-center text-2xl font-bold text-gray-900">Que bom te ver por aqui!
             </p>
-            {/* <p className="mt-2 text-center text-sm text-gray-600">
-              Or{' '}
-              <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                start your 14-day free trial
-              </a>
-            </p> */}
           </div>
 
           <form className="mt-8 space-y-6" action="#" method="POST">
@@ -56,7 +16,7 @@ export default function Login() {
                 <label htmlFor="email-address" className="sr-only">
                   Email address
                 </label>
-                <p className="text-sm py-1">Email</p>
+                <p className="text-sm py-1">E-mail</p>
                 <input
                   id="email-address"
                   name="email"
@@ -64,7 +24,7 @@ export default function Login() {
                   autoComplete="email"
                   required
                   className="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm shadow-sm"
-                  placeholder="Email"
+                  placeholder="E-mail"
                 />
               </div>
               <div>
@@ -97,8 +57,8 @@ export default function Login() {
                 </label>
               </div>
               <div className="text-sm">
-                <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500 pl-1">
-                  Esqueci a senha?
+                <a href="passwordrecovery" className="font-medium text-indigo-600 hover:text-indigo-500 pl-1">
+                  Esqueci a senha
                 </a>
               </div>
             </div>
