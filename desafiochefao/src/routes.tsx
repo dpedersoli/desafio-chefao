@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // import Home from "./components/views/Home";
 import Login from "./components/views/Login";
-// import Register from "./components/views/Register";
+import Register from "./components/views/Register";
 // import PasswordRecover from "./components/views/PasswordRecover";
 // import Goal from "./components/views/Goal";
 // import Cards from "./components/views/Cards";
@@ -17,7 +17,7 @@ export function AppRoutes() {
       <Routes>
         {/* <Route path="/" element={<Home />} /> */}
         <Route path="/login" element={<Login />} />
-        {/* <Route path="/register" element={<Register />} /> */}
+        <Route path="/register" element={<Register />} />
         {/* <Route path="/passwordrecover" element={<PasswordRecover />} /> */}
         {/* <Route path="/goal" element={<Goal />} /> */}
         {/* <Route path="/cards" element={<Cards />} /> */}
