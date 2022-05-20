@@ -29,9 +29,12 @@ export default function Register() {
         ```
       */}
       <div className="min-h-full w-96 max-w-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="w-full space-y-8 ">
+        <div className="w-full space-y-8 flex flex-col">
+          <img className="flex flex-col mx-auto h-fit max-h-20 w-auto mb-12"
+            src="src\images\logo-Daniel-Pedersoli.png"
+            alt="BrandLogo"
+          />
           <form className="mt-8 space-y-6" action="#" method="POST">
-
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="rounded-md -space-y-px">
               <div>

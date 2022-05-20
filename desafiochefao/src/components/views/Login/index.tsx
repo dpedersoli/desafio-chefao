@@ -3,6 +3,10 @@ export default function Login() {
     <>
       <div className="min-h-full w-96 max-w-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="w-full space-y-8 flex flex-col">
+          <img className="flex flex-col mx-auto h-fit max-h-20 w-auto mb-12"
+            src="src\images\logo-Daniel-Pedersoli.png"
+            alt="BrandLogo"
+          />
           <div className="flex flex-col justify-evenly">
             <p className="mt-6 text-center text-2xl font-bold text-gray-900">Que bom te ver por aqui!
             </p>

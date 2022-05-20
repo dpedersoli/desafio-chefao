@@ -4,7 +4,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from "./components/views/Login";
 import Register from "./components/views/Register";
 import PasswordRecovery from "./components/views/PasswordRecovery";
-// import Goal from "./components/views/Goal";
+import Goal1 from "./components/views/Goals/goal1";
+import Goal2 from "./components/views/Goals/goal2";
+import Goal3 from "./components/views/Goals/goal3";
 // import Cards from "./components/views/Cards";
 // import Score from "./components/views/Score";
 // import Planning from "./components/views/Planning";
@@ -19,7 +21,9 @@ export function AppRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/passwordrecovery" element={<PasswordRecovery />} />
-        {/* <Route path="/goal" element={<Goal />} /> */}
+        <Route path="/goal1" element={<Goal1 />} />
+        <Route path="/goal2" element={<Goal2 />} />
+        <Route path="/goal3" element={<Goal3 />} />
         {/* <Route path="/cards" element={<Cards />} /> */}
         {/* <Route path="/score" element={<Score />} /> */}
         {/* <Route path="/planning" element={<Planning />} /> */}

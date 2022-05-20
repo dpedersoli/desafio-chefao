@@ -38,8 +38,12 @@ export default function Login() {
         <body class="h-full">
         ```
       */}
-      <div className="min-h-full w-96 flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="min-h-full w-full space-y-8 flex flex-col">
+      <div className="min-h-full w-96 max-w-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div className="w-full space-y-8 flex flex-col">
+          <img className="flex flex-col mx-auto h-fit max-h-20 w-auto mb-12"
+            src="src\images\logo-Daniel-Pedersoli.png"
+            alt="BrandLogo"
+          />
           <div>
             <p className="mt-6 text-center text-2xl font-bold text-gray-900">Recuperar Senha
             </p>
