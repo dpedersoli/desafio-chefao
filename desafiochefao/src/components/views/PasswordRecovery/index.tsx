@@ -58,7 +58,7 @@ export default function Login() {
             </p> */}
           </div>
 
-          <form className="mt-8 space-y-6" action="#" method="POST">
+          <form className="mt-8 space-y-6" action="/login" method="POST">
 
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="rounded-md -space-y-px">
@@ -94,7 +94,7 @@ export default function Login() {
                 Lembrou a senha?
                 <div className="text-sm px-1">
                   <a href="/login" className="font-medium text-indigo-600 hover:text-indigo-500">
-                    Voltar
+                    Entrar
                   </a>
                 </div>
               </div>

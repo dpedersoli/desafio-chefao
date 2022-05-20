@@ -1,4 +1,11 @@
 export default function Login() {
+
+  // const submit = document.getElementById('submit')
+
+  // if (submit) {
+
+  // }
+
   return (
     <>
       <div className="min-h-full w-96 max-w-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -12,7 +19,7 @@ export default function Login() {
             </p>
           </div>
 
-          <form className="mt-8 space-y-6" action="#" method="POST">
+          <form className="mt-8 space-y-6" action="/goal1" method="POST">
 
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="rounded-md -space-y-px">
@@ -69,6 +76,7 @@ export default function Login() {
 
             <div>
               <button
+                id="submit"
                 type="submit"
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
@@ -77,7 +85,6 @@ export default function Login() {
                 </span> */}
                 Entrar
               </button>
-
               <div className="flex items-center justify-center text-sm pt-4">
                 Não possui uma conta?
                 <div className="text-sm px-1">
@@ -93,3 +100,22 @@ export default function Login() {
     </>
   )
 }
+
+// import { AppRoutes } from '../../../routes'
+
+// function App() {
+
+//   return (
+//     <>
+//       <div className="min-h-screen flex flex-col justify-center items-center">
+//         <img id="logoImage" className="flex mx-auto h-fit max-h-20 w-auto mb-12"
+//           src="src\images\logo-Daniel-Pedersoli.png"
+//           alt="BrandLogo"
+//         />
+//         <AppRoutes />
+//       </div>
+//     </>
+//   );
+// }
+
+// export default App;
