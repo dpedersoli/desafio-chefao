@@ -19,6 +19,9 @@ import { useForm } from 'react-hook-form'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
+import LogoOutside from '../Static Layout/Outside/logo'
+import FooterOutside from '../Static Layout/Outside/footer'
+
 type Profile = {
   name: string,
   email: string,
@@ -49,10 +52,7 @@ export default function Register() {
     <>
       <div className="min-h-full w-96 max-w-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="w-full space-y-8 flex flex-col">
-          <img className="flex flex-col mx-auto h-fit max-h-20 w-auto mb-12"
-            src="src\images\logo-Daniel-Pedersoli.png"
-            alt="BrandLogo"
-          />
+          <LogoOutside />
           <form className="mt-8 space-y-6"
             onSubmit={onSubmit}
           // action="#"
@@ -145,6 +145,7 @@ export default function Register() {
                   type="password"
                   autoComplete="current-password"
                   //CONSERTAR O 'pattern.value'
+                  //COMPONETIZAR
                   {...register("password", // JS only: <p>error message</p> TS only support
                     {
                       required: 'Insira a senha',
@@ -237,6 +238,7 @@ export default function Register() {
               </div>
             </div>
           </form>
+          <FooterOutside />
         </div>
       </div >
     </>

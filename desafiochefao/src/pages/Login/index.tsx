@@ -1,5 +1,6 @@
-// import { LockClosedIcon } from '@heroicons/react/solid'
 import { useForm } from 'react-hook-form'
+import LogoOutside from '../Static Layout/Outside/logo'
+import FooterOutside from '../Static Layout/Outside/footer'
 
 export default function Login() {
   const { register } = useForm()
@@ -14,10 +15,7 @@ export default function Login() {
     <>
       <div className="min-h-full w-96 max-w-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="w-full space-y-8 flex flex-col">
-          <img className="flex flex-col mx-auto h-fit max-h-20 w-auto mb-12"
-            src="src\images\logo-Daniel-Pedersoli.png"
-            alt="BrandLogo"
-          />
+          <LogoOutside />
           <div className="flex flex-col justify-evenly">
             <p className="mt-6 text-center text-2xl font-bold text-gray-900">Que bom te ver por aqui!
             </p>
@@ -84,9 +82,6 @@ export default function Login() {
                 type="submit"
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
-                {/* <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-                  <LockClosedIcon className="h-5 w-5 text-Slate-50 group-hover:text-Zinc-50" aria-hidden="true" />
-                </span> */}
                 Entrar
               </button>
               <div className="flex items-center justify-center text-sm pt-4">
@@ -99,6 +94,7 @@ export default function Login() {
               </div>
             </div>
           </form>
+          <FooterOutside />
         </div>
       </div>
     </>
