@@ -36,17 +36,17 @@ export default function Register() {
     alert(JSON.stringify(data))
     //fazer a rota?? 
   })
-  // const [registrar, setRegistrar] = useState([])
+  const [registrar, setRegistrar] = useState([])
 
-  // useEffect(() => {
-  //   axios.post('apiURL')
-  //     .then(res => {
-  //       console.log(res)
-  //     })
-  //     .catch(err => {
-  //       console.log(err)
-  //     })
-  // })
+  useEffect(() => {
+    axios.post('apiURL')
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  })
 
   return (
     <>
@@ -150,7 +150,7 @@ export default function Register() {
                     {
                       required: 'Insira a senha',
                       pattern: {
-                        value: /^[0-9a-zA-Z]{4,8}/i,
+                        value: /^[0-9a-zA-Z]{4,16}/i,
                         message: "A senha deve conter de 4-8 dígitos com uma pelo menos letra minúscula, uma maiúscula, e pelo menos um número"
                       }
                     })}
