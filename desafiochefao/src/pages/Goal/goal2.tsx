@@ -9,16 +9,16 @@ const Goal1 = () => {
 
         <div className="flex flex-col items-center">
           <a href="/goal3">
-            <div id="firstButton" className="flex justify-center group relative w-56 py-2 px-4 my-2 border border-transparent text-sm font-medium rounded-md text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Até R$100,00</div>
+            <div id="firstButton" className="flex justify-center group relative w-56 py-2 px-4 my-2 border border-transparent text-sm font-medium rounded-full text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Até R$100,00</div>
           </a>
           <a href="/goal3">
-            <div id="secondButton" className="flex justify-center group relative w-56 py-2 px-4 my-2 border border-transparent text-sm font-medium rounded-md text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">De R$101,00 a R$500,00</div>
+            <div id="secondButton" className="flex justify-center group relative w-56 py-2 px-4 my-2 border border-transparent text-sm font-medium rounded-full text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">De R$101,00 a R$500,00</div>
           </a>
           <a href="/goal3">
-            <div id="thirdButton" className="flex justify-center group relative w-56 py-2 px-4 my-2 border border-transparent text-sm font-medium rounded-md text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Mais de R$500,00</div>
+            <div id="thirdButton" className="flex justify-center group relative w-56 py-2 px-4 my-2 border border-transparent text-sm font-medium rounded-full text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Mais de R$500,00</div>
           </a>
           <a href="/goal3">
-            <div id="fourthButton" className="flex justify-center group relative w-56 py-2 px-4 my-2 border border-transparent text-sm font-medium rounded-md text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">O quanto eu conseguir</div>
+            <div id="fourthButton" className="flex justify-center group relative w-56 py-2 px-4 my-2 border border-transparent text-sm font-medium rounded-full text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">O quanto eu conseguir</div>
           </a>
         </div>
 

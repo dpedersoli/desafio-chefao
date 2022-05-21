@@ -1,4 +1,8 @@
+// import { LockClosedIcon } from '@heroicons/react/solid'
+import { useForm } from 'react-hook-form'
+
 export default function Login() {
+  const { register } = useForm()
 
   // const submit = document.getElementById('submit')
 
@@ -21,16 +25,16 @@ export default function Login() {
 
           <form className="mt-8 space-y-6" action="/goal1" method="POST">
 
-            <input type="hidden" name="remember" defaultValue="true" />
+            {/* <input type="hidden" name="remember" defaultValue="true" /> */}
             <div className="rounded-md -space-y-px">
               <div>
                 <label htmlFor="email-address" className="sr-only">
-                  Email address
+                  E-mail
                 </label>
-                <p className="text-sm py-1">E-mail</p>
+                <p className="text-sm py-2">E-mail</p>
                 <input
                   id="email-address"
-                  name="email"
+                  name="email-address"
                   type="email"
                   autoComplete="email"
                   required
@@ -40,9 +44,9 @@ export default function Login() {
               </div>
               <div>
                 <label htmlFor="password" className="sr-only">
-                  Password
+                  Senha
                 </label>
-                <p className="text-sm py-1">Senha</p>
+                <p className="text-sm py-2">Senha</p>
                 <input
                   id="password"
                   name="password"
@@ -68,7 +72,7 @@ export default function Login() {
                 </label>
               </div>
               <div className="text-sm">
-                <a href="passwordrecovery" className="font-medium text-indigo-600 hover:text-indigo-500 pl-1">
+                <a href="/passwordrecovery" className="font-medium text-indigo-600 hover:text-indigo-500 pl-1">
                   Esqueci a senha
                 </a>
               </div>
@@ -86,7 +90,7 @@ export default function Login() {
                 Entrar
               </button>
               <div className="flex items-center justify-center text-sm pt-4">
-                Não possui uma conta?
+                <p>Não possui uma conta?</p>
                 <div className="text-sm px-1">
                   <a href="/register" className="font-medium text-indigo-600 hover:text-indigo-500">
                     Criar

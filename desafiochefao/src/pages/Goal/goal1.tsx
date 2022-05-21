@@ -1,3 +1,8 @@
+// FAZER:
+// show-or-hide-element-in-react
+// https://stackoverflow.com/questions/24502898/show-or-hide-element-in-react
+// https://www.pluralsight.com/guides/how-to-show-and-hide-reactjs-components
+
 const Goal1 = () => {
   // const bt1 = document.getElementById('firstButton')
   // const bt2 = document.getElementById('secondButton')
@@ -19,16 +24,16 @@ const Goal1 = () => {
 
         <div className="flex flex-col items-center">
           <a href="/goal2">
-            <div id="firstButton" className="flex justify-center group relative w-56 py-2 px-4 my-2 border border-transparent text-sm font-medium rounded-md text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Economizar mais</div>
+            <div id="firstButton" className="flex justify-center group relative w-56 py-2 px-4 my-2 border border-transparent text-sm font-medium rounded-full text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Economizar mais</div>
           </a>
           <a href="/goal2">
-            <div id="secondButton" className="flex justify-center group relative w-56 py-2 px-4 my-2 border border-transparent text-sm font-medium rounded-md text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Ter uma renda extra</div>
+            <div id="secondButton" className="flex justify-center group relative w-56 py-2 px-4 my-2 border border-transparent text-sm font-medium rounded-full text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Ter uma renda extra</div>
           </a>
           <a href="/goal2">
-            <div id="thirdButton" className="flex justify-center group relative w-56 py-2 px-4 my-2 border border-transparent text-sm font-medium rounded-md text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Controlar meus gastos</div>
+            <div id="thirdButton" className="flex justify-center group relative w-56 py-2 px-4 my-2 border border-transparent text-sm font-medium rounded-full text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Controlar meus gastos</div>
           </a>
           <a href="/goal2">
-            <div id="fourthButton" className="flex justify-center group relative w-56 py-2 px-4 my-2 border border-transparent text-sm font-medium rounded-md text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Investir meu dinheiro</div>
+            <div id="fourthButton" className="flex justify-center group relative w-56 py-2 px-4 my-2 border border-transparent text-sm font-medium rounded-full text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Investir meu dinheiro</div>
           </a>
           {/* <button id="firstButton" className="group relative w-56 py-2 px-4 my-2 border border-transparent text-sm font-medium rounded-md text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Economizar mais</button>
           <button id="secondButton" className="group relative w-56 py-2 px-4 my-2 border border-transparent text-sm font-medium rounded-md text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Ter uma renda extra</button>
