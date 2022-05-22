@@ -16,8 +16,8 @@
 */
 // import { LockClosedIcon } from '@heroicons/react/solid'
 
-import LogoOutside from '../Static Layout/Outside/logo'
-import FooterOutside from '../Static Layout/Outside/footer'
+import LogoOutside from '../components/logo'
+import FooterOutside from '../components/footer'
 
 export default function Login() {
 

@@ -1,4 +1,4 @@
-import HeaderArrow from '../Static Layout/Inside/headerArrow'
+import HeaderArrow from '../components/headerArrow'
 
 const Home = () => {
   return (

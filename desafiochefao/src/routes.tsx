@@ -4,21 +4,24 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import PasswordRecovery from "./pages/PasswordRecovery";
-import Goal1 from "./pages/Goal/goal1";
-import Goal2 from "./pages/Goal/goal2";
-import Goal3 from "./pages/Goal/goal3";
+import Goal1 from "./components/goal/goal1";
+import Goal2 from "./components/goal/goal2";
+import Goal3 from "./components/goal/goal3";
+import { useContext } from 'react';
+import { AuthContext } from './providers/AutheticationContext';
 // import Cards from "./components/views/Cards";
 // import Score from "./components/views/Score";
 // import Planning from "./components/views/Planning";
 // import Videos from "./components/views/Videos";
 
 
-export function AppRoutes() {
+const AppRoutes = () => {
+  const { isAuthenticated } = useContext(AuthContext)
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={isAuthenticated ? <Home /> : <Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/passwordrecovery" element={<PasswordRecovery />} />
         <Route path="/goal1" element={<Goal1 />} />
@@ -32,3 +35,5 @@ export function AppRoutes() {
     </BrowserRouter>
   );
 }
+
+export default AppRoutes;
