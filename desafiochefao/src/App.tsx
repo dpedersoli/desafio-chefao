@@ -5,7 +5,7 @@ function App() {
 
   return (
     <AuthenticationProvider>
-      <div className="min-h-screen flex flex-col justify-center items-center">
+      <div>
         <AppRoutes />
       </div>
     </AuthenticationProvider>

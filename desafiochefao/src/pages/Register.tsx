@@ -26,8 +26,8 @@ export default function Register() {
   // })
 
   return (
-    <>
-      <div className="min-h-full w-96 max-w-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex flex-col items-center justify-center">
+      <div className="w-96 max-w-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="w-full space-y-8 flex flex-col">
           <LogoOutside />
           <form className="mt-8 space-y-6"
@@ -208,7 +208,7 @@ export default function Register() {
               <div className="flex items-center justify-center text-sm pt-4">
                 Já possui uma conta?
                 <div className="text-sm px-1">
-                  <a href="/login" className="font-medium text-indigo-600 hover:text-indigo-500">
+                  <a href="/" className="font-medium text-indigo-600 hover:text-indigo-500">
                     Entrar
                   </a>
                 </div>
@@ -218,6 +218,6 @@ export default function Register() {
           <FooterOutside />
         </div>
       </div >
-    </>
+    </div>
   )
 }

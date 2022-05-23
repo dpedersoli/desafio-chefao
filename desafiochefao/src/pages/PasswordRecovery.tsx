@@ -31,7 +31,7 @@ export default function Login() {
   }
 
   return (
-    <>
+    <div className="min-h-screen flex flex-col items-center justify-center">
       {/*
         This example requires updating your template:
 
@@ -40,7 +40,7 @@ export default function Login() {
         <body class="h-full">
         ```
       */}
-      <div className="min-h-full w-96 max-w-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="w-96 max-w-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="w-full space-y-8 flex flex-col">
           <LogoOutside />
           <div>
@@ -92,7 +92,7 @@ export default function Login() {
               <div className="flex items-center justify-center text-sm pt-4">
                 Lembrou a senha?
                 <div className="text-sm px-1">
-                  <a href="/login" className="font-medium text-indigo-600 hover:text-indigo-500">
+                  <a href="/" className="font-medium text-indigo-600 hover:text-indigo-500">
                     Entrar
                   </a>
                 </div>
@@ -102,6 +102,6 @@ export default function Login() {
           <FooterOutside />
         </div>
       </div>
-    </>
+    </div>
   )
 }

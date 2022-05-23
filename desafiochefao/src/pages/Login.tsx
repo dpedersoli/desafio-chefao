@@ -6,8 +6,8 @@ import Button from '../components/Button'
 const Login = () => {
 
   return (
-    <>
-      <div className="min-h-full w-96 max-w-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex flex-col items-center justify-center">
+      <div className="w-96 max-w-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="w-full space-y-8 flex flex-col">
           <LogoOutside />
           <div className="flex flex-col justify-evenly">
@@ -64,7 +64,7 @@ const Login = () => {
           <FooterOutside />
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
