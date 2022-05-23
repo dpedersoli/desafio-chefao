@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 
 import LogoOutside from '../components/logo'
 import FooterOutside from '../components/footer'
@@ -12,18 +12,6 @@ type Profile = {
 
 
 export default function Register() {
-
-  // const [registrar, setRegistrar] = useState([])
-
-  // useEffect(() => {
-  //   axios.post('apiURL')
-  //     .then(res => {
-  //       console.log(res)
-  //     })
-  //     .catch(err => {
-  //       console.log(err)
-  //     })
-  // })
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
