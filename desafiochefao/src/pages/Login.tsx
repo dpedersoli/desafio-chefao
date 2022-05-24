@@ -15,9 +15,8 @@ const Login = () => {
             </p>
           </div>
 
-          <form className="mt-8 space-y-6" action="/goal1" method="POST">
+          <form className="mt-8 space-y-6" action="/goal" method="POST">
 
-            {/* <input type="hidden" name="remember" defaultValue="true" /> */}
             <div className="rounded-md -space-y-px">
               <Input id="email-address" content="E-mail" type="email"
                 autoComplete="email"

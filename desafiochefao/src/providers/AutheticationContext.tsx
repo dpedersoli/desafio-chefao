@@ -21,14 +21,14 @@ export const AuthConsumer = AuthContext.Consumer
 
 const AuthenticationProvider = ({ children }: Provider) => {
 
-  const [isAuthenticated, setIsAuthenticated] = useState(true)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [user, setUser] = useState({ name: "", email: "", password: "", isGoalSet: false })
 
   useEffect(() => {
-    localStorage.setItem(JWT_TOKEN, '8520') //aqui o JWT que o Lucas/back me passar
+    localStorage.setItem(JWT_TOKEN, '0000') //aqui o JWT que o Lucas/back me passar
     setUser({
       name: 'Daniel',
-      email: 'daniel@daniel.daniel',
+      email: 'daniel@dani.dan',
       password: '1235',
       isGoalSet: false
     })
