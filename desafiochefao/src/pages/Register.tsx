@@ -3,6 +3,10 @@ import LogoOutside from "../components/logo";
 import FooterOutside from "../components/footer";
 import api from "../services/api";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect, useContext } from 'react'
+
+import LogoOutside from '../components/logo'
+import FooterOutside from '../components/footer'
 
 type Profile = {
   name: string;
@@ -12,21 +16,11 @@ type Profile = {
 };
 
 export default function Register() {
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   let navigate = useNavigate();
-  // const [registrar, setRegistrar] = useState([])
-
-  // useEffect(() => {
-  //   axios.post('apiURL')
-  //     .then(res => {
-  //       console.log(res)
-  //     })
-  //     .catch(err => {
-  //       console.log(err)
-  //     })
-  // })
 
   async function createUser() {
     const response = await api.post("/users/new", {
