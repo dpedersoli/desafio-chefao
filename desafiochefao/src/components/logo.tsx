@@ -4,7 +4,7 @@ const LogoOutside = () => {
       <header>
         <div className="flex flex-col justify-center items-center">
           <img className="flex flex-col mx-auto h-fit max-h-20 w-auto mb-12"
-            src="src\images\logo-Daniel-Pedersoli.png"
+            src="src\images\logo.png"
             alt="BrandLogo"
           />
         </div>

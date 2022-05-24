@@ -29,7 +29,7 @@ const AuthenticationProvider = ({ children }: Provider) => {
     setUser({
       name: 'Daniel',
       email: 'daniel@dani.dan',
-      password: '1235',
+      password: '1234',
       isGoalSet: false
     })
   }, [])

@@ -13,7 +13,7 @@ const Goal = () => {
   const nextStep = (answer: string) => {
     setSavedAnswers([...savedAnswers, answer])
     if (step === steps.length) {
-      //submitt()
+      //submit()
     } else {
       setStep(step + 1)
     }

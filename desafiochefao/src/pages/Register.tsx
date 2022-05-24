@@ -69,7 +69,7 @@ export default function Register() {
                   // required
                   className="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm shadow-sm"
                   placeholder="Digite seu nome"
-                  onChange={(e) => setName(e.target.value)}
+                  onChange={(e) => { () => { setName(e.target.value) } }}
                 />
                 {/* {errors.name ? (
                   <>
@@ -107,7 +107,7 @@ export default function Register() {
                   // required
                   className="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm shadow-sm"
                   placeholder="Digite seu e-mail"
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => { () => { setEmail(e.target.value) } }}
                 />
                 {/* {errors.email ? (
                 <>
@@ -150,6 +150,7 @@ export default function Register() {
                   // required
                   className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm shadow-sm"
                   placeholder="Crie uma senha"
+                  onChange={(e) => { () => { setPassword(e.target.value) } }}
                 />
                 {/* {errors.password ? (
                 <>
@@ -190,7 +191,7 @@ export default function Register() {
                   // })}
                   className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm shadow-sm"
                   placeholder="Confirme sua senha"
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => { () => { e } }}
                 />
                 {/* {errors.checkPassword ? (
                 <>
@@ -213,9 +214,7 @@ export default function Register() {
               <button
                 type="submit"
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                onClick={(e) => {
-                  e.preventDefault(), createUser();
-                }}
+                onClick={(e) => { () => { e.preventDefault(), createUser() } }}
               >
                 {/* <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                   <LockClosedIcon className="h-5 w-5 text-Slate-50 group-hover:text-Zinc-50" aria-hidden="true" />
@@ -225,7 +224,7 @@ export default function Register() {
               <div className="flex items-center justify-center text-sm pt-4">
                 Já possui uma conta?
                 <div className="text-sm px-1">
-                  <a href="/" className="font-medium text-indigo-600 hover:text-indigo-500">
+                  <a href="/login" className="font-medium text-indigo-600 hover:text-indigo-500">
                     Entrar
                   </a>
                 </div>

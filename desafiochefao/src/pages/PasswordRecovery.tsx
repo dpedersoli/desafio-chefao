@@ -1,23 +1,7 @@
-/*
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
-// import { LockClosedIcon } from '@heroicons/react/solid'
-
 import LogoOutside from '../components/logo'
 import FooterOutside from '../components/footer'
+import Button from '../components/Button'
+import Input from '../components/Input'
 
 export default function Login() {
 
@@ -59,40 +43,36 @@ export default function Login() {
 
           <form className="mt-8 space-y-6" action="/login" method="POST">
 
-            <input type="hidden" name="remember" defaultValue="true" />
             <div className="rounded-md -space-y-px">
               <div>
-                <label htmlFor="email-address" className="sr-only">
-                  Email address
-                </label>
-                <p className="text-sm py-1">E-mail</p>
-                <input
+                <Input
                   id="email-address"
-                  name="email"
+                  content="E-mail"
+                  placeholder="email@provider.com"
                   type="email"
                   autoComplete="email"
+                  pattern="/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i"
                   required
-                  className="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm shadow-sm"
-                  placeholder="Digite seu e-mail"
+                  onChange={(e) => { () => { e } }}
                 />
               </div>
             </div>
 
             <div>
-              <button
+              <Button
+                content="Entrar"
                 type="submit"
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={sendEmail}
+                id="submit"
+                customClassName="px-12 uppercase"
+                onClick={(e) => { () => { e } }}
               >
-                {/* <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-                  <LockClosedIcon className="h-5 w-5 text-Slate-50 group-hover:text-Zinc-50" aria-hidden="true" />
-                </span> */}
                 Enviar
-              </button>
+              </Button>
 
               <div className="flex items-center justify-center text-sm pt-4">
                 Lembrou a senha?
                 <div className="text-sm px-1">
-                  <a href="/" className="font-medium text-indigo-600 hover:text-indigo-500">
+                  <a href="/login" className="font-medium text-indigo-600 hover:text-indigo-500">
                     Entrar
                   </a>
                 </div>

@@ -1,9 +1,12 @@
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string,
-  content: string
+  content: string,
+  customInputClassName?: string
 } //aceita elementos HTML dentro do component
 
-const Input = ({ id, content, ...props }: Props) => {
+const Input = ({ id, content, customInputClassName, ...props }: Props) => {
+  const inputClassName = ["mt-2 appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm shadow-sm text-sm", customInputClassName].join(" ")
+
   return (
     <div>
       <label htmlFor={id} className="text-sm">
@@ -12,8 +15,7 @@ const Input = ({ id, content, ...props }: Props) => {
       <input
         id={id}
         name={id}
-        className="mt-2 appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm shadow-sm"
-        placeholder={content}
+        className={inputClassName}
         {...props} //p não precisar declarar tudo
       />
     </div>

@@ -9,8 +9,11 @@ const Home = () => {
   return (
     <>
       <div>
-        <HeaderArrow />
-        {user.isGoalSet ? <div>retorna tela 'home'</div> : <Goals />}
+        {/* <HeaderArrow />
+        {user.isGoalSet ? <div>retorna tela 'home'</div> : <Goals />} */}
+
+
+
       </div>
     </>
   )
