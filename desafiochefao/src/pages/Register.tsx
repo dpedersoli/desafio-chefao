@@ -1,27 +1,55 @@
+import { useState, useEffect } from "react";
+import LogoOutside from "../components/logo";
+import FooterOutside from "../components/footer";
+import api from "../services/api";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useContext } from 'react'
 
 import LogoOutside from '../components/logo'
 import FooterOutside from '../components/footer'
 
 type Profile = {
-  name: string,
-  email: string,
-  password: string,
-  checkPassword: string,
-}
-
+  name: string;
+  email: string;
+  password: string;
+  checkPassword: string;
+};
 
 export default function Register() {
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  let navigate = useNavigate();
+
+  async function createUser() {
+    const response = await api.post("/users/new", {
+      nomeUsuario: name,
+      emailUsuario: email,
+      senhaUsuario: password,
+    });
+    if (response.status === 409) {
+      alert("Usuário já existe!");
+      navigate("/");
+    } else {
+      alert("Usuário cadastrado!");
+      setName("");
+      setEmail("");
+      setPassword("");
+      navigate("/");
+    }
+  }
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
       <div className="w-96 max-w-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="w-full space-y-8 flex flex-col">
           <LogoOutside />
-          <form className="mt-8 space-y-6"
-          // onSubmit={}
-          // action="#"
-          // method="PUT?"
+          <form
+            className="mt-8 space-y-6"
+
+            // action="#"
+            // method="PUT?"
           >
             {/* <input type="hidden" name="remember" defaultValue="true" /> */}
             <div className="rounded-md -space-y-px">
@@ -45,6 +73,7 @@ export default function Register() {
                   // required
                   className="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm shadow-sm"
                   placeholder="Digite seu nome"
+                  onChange={(e) => setName(e.target.value)}
                 />
                 {/* {errors.name ? (
                   <>
@@ -82,6 +111,7 @@ export default function Register() {
                   // required
                   className="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm shadow-sm"
                   placeholder="Digite seu e-mail"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
                 {/* {errors.email ? (
                 <>
@@ -144,7 +174,8 @@ export default function Register() {
               <div>
                 <label
                   // htmlFor="check-password"
-                  className="sr-only">
+                  className="sr-only"
+                >
                   Check Password
                 </label>
                 <p className="text-sm py-2">Confirmar Senha</p>
@@ -155,7 +186,7 @@ export default function Register() {
                   autoComplete="current-password"
                   //fazer a validação de senhas iguais direito
                   // {...register("checkPassword", {
-                  //   required: 'As senhas precisam estar idênticas', // JS only: <p>error message</p> TS only support 
+                  //   required: 'As senhas precisam estar idênticas', // JS only: <p>error message</p> TS only support
                   //   pattern: {
                   //     value: /^[0-9a-zA-Z]{4,8}/i, //igual ao 'password'
                   //     message: "As senhas precisam estar idênticas"
@@ -163,6 +194,7 @@ export default function Register() {
                   // })}
                   className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm shadow-sm"
                   placeholder="Confirme sua senha"
+                  onChange={(e) => setPassword(e.target.value)}
                 />
                 {/* {errors.checkPassword ? (
                 <>
@@ -179,20 +211,21 @@ export default function Register() {
                 </>
               ) : null} */}
               </div>
-
             </div>
 
             <div>
               <button
                 type="submit"
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-lime-400 hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                onClick={(e) => {
+                  e.preventDefault(), createUser();
+                }}
               >
                 {/* <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                   <LockClosedIcon className="h-5 w-5 text-Slate-50 group-hover:text-Zinc-50" aria-hidden="true" />
                 </span> */}
                 Criar Conta
               </button>
-
               <div className="flex items-center justify-center text-sm pt-4">
                 Já possui uma conta?
                 <div className="text-sm px-1">
@@ -205,7 +238,7 @@ export default function Register() {
           </form>
           <FooterOutside />
         </div>
-      </div >
+      </div>
     </div>
-  )
+  );
 }
