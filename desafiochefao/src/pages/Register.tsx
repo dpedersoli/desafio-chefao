@@ -1,12 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import LogoOutside from "../components/logo";
 import FooterOutside from "../components/footer";
 import api from "../services/api";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect, useContext } from 'react'
-
-import LogoOutside from '../components/logo'
-import FooterOutside from '../components/footer'
 
 type Profile = {
   name: string;
@@ -16,7 +12,6 @@ type Profile = {
 };
 
 export default function Register() {
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
