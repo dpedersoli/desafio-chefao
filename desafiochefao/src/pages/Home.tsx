@@ -10,7 +10,7 @@ const Home = () => {
     <>
       <div>
         <HeaderArrow />
-        {user.isGoalSet ? <div>retorna teala 'home'</div> : <Goals />}
+        {user.isGoalSet ? <div>retorna tela 'home'</div> : <Goals />}
       </div>
     </>
   )

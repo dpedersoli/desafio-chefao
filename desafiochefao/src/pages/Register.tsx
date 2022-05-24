@@ -1,12 +1,9 @@
-import { useState, useEffect } from "react";
 import LogoOutside from "../components/logo";
 import FooterOutside from "../components/footer";
+
 import api from "../services/api";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useContext } from 'react'
-
-import LogoOutside from '../components/logo'
-import FooterOutside from '../components/footer'
 
 type Profile = {
   name: string;
@@ -48,8 +45,8 @@ export default function Register() {
           <form
             className="mt-8 space-y-6"
 
-            // action="#"
-            // method="PUT?"
+          // action="#"
+          // method="PUT?"
           >
             {/* <input type="hidden" name="remember" defaultValue="true" /> */}
             <div className="rounded-md -space-y-px">
