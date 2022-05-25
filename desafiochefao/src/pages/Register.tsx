@@ -69,6 +69,9 @@ export default function Register() {
                   // required
                   className="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm shadow-sm"
                   placeholder="Digite seu nome"
+                  pattern="[a-zA-Z]{2,30}$"
+                  title="Nome Sobrenome"
+                  required
                   onChange={(e) => { () => { setName(e.target.value) } }}
                 />
                 {/* {errors.name ? (
@@ -107,6 +110,9 @@ export default function Register() {
                   // required
                   className="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm shadow-sm"
                   placeholder="Digite seu e-mail"
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                  title="exemplo@email.com"
+                  required
                   onChange={(e) => { () => { setEmail(e.target.value) } }}
                 />
                 {/* {errors.email ? (
@@ -150,6 +156,9 @@ export default function Register() {
                   // required
                   className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm shadow-sm"
                   placeholder="Crie uma senha"
+                  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*_=+-]).{4,16}$"
+                  title="A senha deve conter de 4 a 16 caracteres, sendo eles pelo menos uma letra minúscula, uma letra maiúscula, um número e um símbolo (!@#$%^*_=+-)"
+                  required
                   onChange={(e) => { () => { setPassword(e.target.value) } }}
                 />
                 {/* {errors.password ? (
