@@ -11,8 +11,8 @@ const Login = () => {
 
   async function userLogin() {
     const response = await api.post("/users/login", {
-      emailUsuario: email,
-      senhaUsuario: password,
+      emailUser: email,
+      senhaUser: password,
     });
 
     const token = response.data;
@@ -21,17 +21,15 @@ const Login = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
+    <div className="min-h-screen flex flex-col items-center justify-center p-4">
       <LogoOutside />
       <div className="flex flex-col justify-evenly">
-        <p className="mt-6 text-center text-2xl font-bold text-gray-900">
-          Olá!
-          <br />
-          Que bom te ver por aqui!
+        <p className="mt-6 text-center text-xl font-bold text-gray-900">
+          Olá! Que bom te ver por aqui!
         </p>
       </div>
 
-      <form className="my-6 space-y-6" action="/goal" method="POST">
+      <form className="my-6 space-y-6 w-full" action="/goal" method="POST">
         <div className="rounded-md -space-y-px">
           <Input
             id="email-address"
@@ -86,10 +84,10 @@ const Login = () => {
             customClassName="px-12 uppercase"
             onClick={(e) => { () => { e.preventDefault(), userLogin() } }}
           />
-          <div className="flex items-center justify-center text-sm pt-4">
+          <div className="flex items-center justify-center text-xs pt-4">
             <p>Não possui uma conta?</p>
             <div className="text-sm px-1">
-              <a href="/register" className="font-bold text-indigo-600 hover:text-indigo-500">
+              <a href="/register" className="font-bold text-indigo-600 hover:text-indigo-500 uppercase">
                 Criar
               </a>
             </div>
