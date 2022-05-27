@@ -1,54 +1,61 @@
+import HeaderArrow from '../components/HeaderArrow'
+import Logo from "../components/Logo"
+
 import { useState } from "react";
-import Button from "../components/Button";
 import axios from "axios";
 
 const Goal = () => {
 
   return (
-    <div className="text-center px-12">
-      <h1>GOALS</h1>
+    <div>
+      <HeaderArrow link="/tutorial" />
+      <div className="min-h-screen flex flex-col items-center p-4">
+        <Logo customImageClassName="pb-16" />
+        <div className="flex flex-col justify-evenly">
+          <p className="text-center text-2xl font-bold text-gray-900">
+            Vamos começar o seu
+            <br />
+            planejamento!
+          </p>
+          <br />
+          <p className="text-center text-base text-gray-900 w-96">
+            Escolha qual meta financeira que você deseja
+            <br />
+            alcançar agora:
+          </p>
+        </div>
+        <div className="pt-10 w-full">
+          <button className="w-full flex justify-center py-3 border border-transparent px-24 font-normal text-base bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 drop-shadow my-2"> Sair das dívidas
+            <span className="absolute left-0 inset-y-0 flex items-center pl-3">
+              <img src="src\images\Goals\sair-das-dividas.png" className="h-8 w-8" />
+            </span>
+          </button>
+          <a href="/">
+            <button onClick={(e) => { () => { 'tutorial' } }} className="w-full flex justify-center py-3 border border-transparentfont-normal text-base bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 drop-shadow my-2"> Juntar dinheiro
+              <span className="absolute left-0 inset-y-0 flex items-center pl-3">
+                <img src="src\images\Goals\juntar-dinheiro.png" className="h-8 w-8" />
+              </span>
+            </button>
+          </a>
+          <button className="w-full flex justify-center py-3 border border-transparent font-normal text-base bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 drop-shadow my-2"> Começar a investir
+            <span className="absolute left-0 inset-y-0 flex items-center pl-3">
+              <img src="src\images\Goals\comecar-a-investir.png" className="h-8 w-8" />
+            </span>
+          </button>
+          <button className="w-full flex justify-center py-3 border border-transparent font-normal text-base bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 drop-shadow my-2"> Otimizar investimentos
+            <span className="absolute left-0 inset-y-0 flex items-center pl-3">
+              <img src="src\images\Goals\otimizar-investimentos.png" className="h-8 w-8" />
+            </span>
+          </button>
+          <button className="w-full flex justify-center py-3 border border-transparent font-normal text-base bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 drop-shadow my-2"> Outros
+            <span className="absolute left-0 inset-y-0 flex items-center pl-3">
+              <img src="src\images\Goals\outros.png" className="h-8 w-8" />
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
   )
 };
 
 export default Goal;
-
-// import { useState } from "react";
-// import Button from "../components/Button";
-
-// const Tutorial = () => {
-//   const [step, setStep] = useState(1)
-//   const steps = [
-//     { id: 1, question: 'Escolha qual meta financeira que mais combina com você agora:', options: ['Economizar mais', 'Ter uma renda extra', 'Controlar meus gastos', 'Investir meu dinheiro'] },
-//     { id: 2, question: 'Já tem um valor em mente?', options: ['Até R$100,00', 'De R$101,00 a R$500,00', 'Mais de R$500,00', 'O quanto eu conseguir'] },
-//     { id: 3, question: 'Em quanto tempo deseja conquistar esse valor?', options: ['semanalmente', 'mensalmente', 'anualmente', 'À medida que der '] },
-//   ]
-//   const currentStep = steps.find(item => item.id === step) //loop
-//   const [savedAnswers, setSavedAnswers] = useState<string[]>([])
-//   const nextStep = (answer: string) => {
-//     setSavedAnswers([...savedAnswers, answer])
-//     if (step === steps.length) {
-//       //submit()
-//     } else {
-//       setStep(step + 1)
-//     }
-//   }
-
-//   return (
-//     <div className="text-center px-12">
-//       <h1 className="text-2xl py-20 font-bold">Vamos começar o seu planejamento hoje!</h1>
-//       <div className="text-lg h-20">
-//         {currentStep?.question}
-//       </div>
-//       <div >
-//         {currentStep?.options.map(option => <Button key={option} customClassName="my-2 rounded-full" onClick={() => nextStep(option)} content={option} />)}
-//       </div>
-//       {/* no '.map' eu passo o 'key' */}
-//       <div className="flex justify-center mt-4">
-//         {steps.map(({ id }) => <div className={['w-2 h-2 rounded mx-1', id <= step ? 'bg-zinc-900' : 'bg-zinc-400'].join(' ')}></div>)}
-//       </div>
-//     </div>
-//   )
-// };
-
-// export default Tutorial;
