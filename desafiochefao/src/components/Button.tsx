@@ -4,7 +4,7 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 } //aceita elementos HTML dentro do component
 
 const Button = ({ content, customClassName, ...props }: Props) => {
-  const className = ["group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-normal rounded-sm text-white bg-blue-600 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500", customClassName].join(" ")
+  const className = ["group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-bold rounded-full text-white bg-blue-600 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500", customClassName].join(" ")
 
   return (
     <div>

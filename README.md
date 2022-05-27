@@ -1,3 +1,23 @@
-Refference:
-https://larainfo.com/blogs/install-setup-vite-react-typescript-tailwind-css-3
-L> make sure to install 'tailwind' at the right folder and pass the right path
+#Desafio do Chefão - Gama Academy 2022
+
+#Grupo: Grupo 01
+
+#Integrantes do Grupo
+*PM:
+Gregory Santos
+Hellen Dárlian
+
+*UI/UX Design:
+Clever Braga
+Débora Resende
+Flávia Coelho
+Isabela Laís
+Jéssica Menezes
+Karla Rodrigues
+
+*Front-end
+Daniel Pedersoli
+
+*Back-end
+Gustavo Matos
+Lucas Matos

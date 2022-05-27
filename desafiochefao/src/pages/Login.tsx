@@ -1,5 +1,4 @@
-import LogoOutside from "../components/logo";
-import FooterOutside from "../components/footer";
+import Logo from "../components/Logo";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import { useState } from "react";
@@ -22,14 +21,14 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">
-      <LogoOutside />
+      <Logo />
       <div className="flex flex-col justify-evenly">
-        <p className="mt-6 text-center text-xl font-bold text-gray-900">
-          Olá! Que bom te ver por aqui!
+        <p className="mt-1 mb-14 text-center text-xl font-bold text-gray-900">
+          Olá! Entre na sua conta
         </p>
       </div>
 
-      <form className="my-6 space-y-6 w-full" action="/goal" method="POST">
+      <form className="my-6 space-y-6 w-full" action="/IntroTutorial" method="POST">
         <div className="rounded-md -space-y-px">
           <Input
             id="email-address"
@@ -69,7 +68,7 @@ const Login = () => {
           <div className="text-sm">
             <a
               href="/passwordrecovery"
-              className="font-medium text-indigo-600 hover:text-indigo-500 pl-1"
+              className="text-sm text-indigo-600 hover:text-indigo-500 pl-1"
             >
               Esqueci a senha
             </a>
@@ -94,7 +93,6 @@ const Login = () => {
           </div>
         </div>
       </form>
-      <FooterOutside />
     </div>
   );
 };

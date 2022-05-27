@@ -1,4 +1,4 @@
-import AppRoutes from "./routes";
+import AppRoutes from "./Routes";
 import AuthenticationProvider from "./providers/AutheticationContext";
 
 function App() {
