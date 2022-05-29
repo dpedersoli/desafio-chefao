@@ -1,23 +1,34 @@
 import Logo from "../components/Logo";
 import Input from "../components/Input";
 import Button from "../components/Button";
-import { useState } from "react";
+
+import { useState, useCallback, FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 
+interface Profile {
+  email: string;
+  password: string;
+};
+
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [data, setData] = useState<Profile>({} as Profile)
+  const [error, setError] = useState('')
 
-  async function userLogin() {
-    const response = await api.post("/users/login", {
-      emailUser: email,
-      senhaUser: password,
-    });
+  let navigate = useNavigate();
 
-    const token = response.data;
-    console.log('Token:', token);
-    localStorage.setItem("token", token);
-  }
+  const handleSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    api.post('/users/login', data).then(response => {
+      if (response.status === 200) {
+        const token = response.data;
+        localStorage.setItem("token", token);
+        navigate('/tutorial')
+      }
+    }).catch(error => {
+      setError(error.message)
+    })
+  }, [data])
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">
@@ -28,7 +39,7 @@ const Login = () => {
         </p>
       </div>
 
-      <form className="my-6 space-y-6 w-full" action="/IntroTutorial" method="POST">
+      <form className="my-6 space-y-6 w-full" onSubmit={handleSubmit}>
         <div className="rounded-md -space-y-px">
           <Input
             id="email-address"
@@ -39,7 +50,7 @@ const Login = () => {
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             title="exemplo@email.com"
             required
-            onChange={(e) => { () => { setEmail(e.target.value) } }}
+            onChange={e => setData({ ...data, email: e.target.value })}
           />
           <Input
             id="password"
@@ -49,7 +60,7 @@ const Login = () => {
             required
             pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*_=+-]).{4,16}$"
             title="A senha deve conter de 4 a 16 caracteres, sendo eles pelo menos uma letra minúscula, uma letra maiúscula, um número e um símbolo (!@#$%^*_=+-)"
-            onChange={(e) => { () => { setPassword(e.target.value) } }}
+            onChange={e => setData({ ...data, password: e.target.value })}
           />
         </div>
 
@@ -81,7 +92,6 @@ const Login = () => {
             type="submit"
             id="submit"
             customClassName="px-12 uppercase"
-            onClick={(e) => { () => { e.preventDefault(), userLogin() } }}
           />
           <div className="flex items-center justify-center text-xs pt-4">
             <p>Não possui uma conta?</p>
@@ -93,6 +103,9 @@ const Login = () => {
           </div>
         </div>
       </form>
+      <p className="text-red-700 text-center">
+        {error}
+      </p>
     </div>
   );
 };

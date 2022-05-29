@@ -88,7 +88,6 @@ const Register = () => {
                   type="submit"
                   id="submit"
                   customClassName="px-12 uppercase"
-                  onClick={(e) => { () => { navigate('/register') } }}
                 />
                 <div className="flex items-center justify-center text-xs pt-4">
                   Já possui uma conta?
