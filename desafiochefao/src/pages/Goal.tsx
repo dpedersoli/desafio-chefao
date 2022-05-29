@@ -1,5 +1,6 @@
 import HeaderArrow from '../components/HeaderArrow'
 import Logo from "../components/Logo"
+import Button from '../components/Button'
 
 import { useState } from "react";
 import axios from "axios";
@@ -25,33 +26,12 @@ const Goal = () => {
           </p>
         </div>
         <div className="pt-10 w-full">
-          <button className="w-full flex justify-center py-3 border border-transparent px-24 font-normal text-base bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 drop-shadow my-2"> Sair das dívidas
-            <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-              <img src="src\images\Goals\sair-das-dividas.png" className="h-8 w-8" />
-            </span>
-          </button>
+          <Button content="Sair das dívidas" customClassName="!bg-white !text-black !rounded-md drop-shadow !font-normal !my-8" leftImage="src\images\Goals\sair-das-dividas.png" />
           <a href="/">
-            <button onClick={(e) => { () => { 'tutorial' } }} className="w-full flex justify-center py-3 border border-transparentfont-normal text-base bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 drop-shadow my-2"> Juntar dinheiro
-              <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-                <img src="src\images\Goals\juntar-dinheiro.png" className="h-8 w-8" />
-              </span>
-            </button>
+            <Button content="Juntar dinheiro" customClassName="!bg-white !text-black !rounded-md drop-shadow !font-normal !my-8" leftImage="src\images\Goals\juntar-dinheiro.png" />
           </a>
-          <button className="w-full flex justify-center py-3 border border-transparent font-normal text-base bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 drop-shadow my-2"> Começar a investir
-            <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-              <img src="src\images\Goals\comecar-a-investir.png" className="h-8 w-8" />
-            </span>
-          </button>
-          <button className="w-full flex justify-center py-3 border border-transparent font-normal text-base bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 drop-shadow my-2"> Otimizar investimentos
-            <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-              <img src="src\images\Goals\otimizar-investimentos.png" className="h-8 w-8" />
-            </span>
-          </button>
-          <button className="w-full flex justify-center py-3 border border-transparent font-normal text-base bg-white text-black rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 drop-shadow my-2"> Outros
-            <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-              <img src="src\images\Goals\outros.png" className="h-8 w-8" />
-            </span>
-          </button>
+          <Button content="Começar a investir" customClassName="!bg-white !text-black !rounded-md drop-shadow !font-normal !my-8" leftImage="src\images\Goals\comecar-a-investir.png" />
+          <Button content="Otimizar investimentos" customClassName="!bg-white !text-black !rounded-md drop-shadow !font-normal !my-8" leftImage="src\images\Goals\otimizar-investimentos.png" />
         </div>
       </div>
     </div>
