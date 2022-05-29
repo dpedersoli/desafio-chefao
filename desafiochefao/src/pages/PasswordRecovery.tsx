@@ -5,15 +5,6 @@ import HeaderArrow from '../components/HeaderArrow'
 
 export default function Login() {
 
-  let emailIsValid = document.querySelector('#email-address')
-
-  function sendEmail() {
-    if (emailIsValid) {
-      alert('Acesse o link que te enviamos por e-mail e redefina sua senha')
-    }
-
-  }
-
   return (
     <div>
       <HeaderArrow link="/login" />
