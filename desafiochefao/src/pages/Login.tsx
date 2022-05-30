@@ -7,28 +7,34 @@ import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 
 interface Profile {
-  email: string;
-  password: string;
-};
+  emailUsuario: string;
+  senhaUsuario: string;
+}
 
 const Login = () => {
-  const [data, setData] = useState<Profile>({} as Profile)
-  const [error, setError] = useState('')
+  const [data, setData] = useState<Profile>({} as Profile);
+  const [error, setError] = useState("");
 
   let navigate = useNavigate();
 
-  const handleSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    api.post('/users/login', data).then(response => {
-      if (response.status === 200) {
-        const token = response.data;
-        localStorage.setItem("token", token);
-        navigate('/tutorial')
-      }
-    }).catch(error => {
-      setError(error.message)
-    })
-  }, [data])
+  const handleSubmit = useCallback(
+    (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      api
+        .post("/users/login", data)
+        .then((response) => {
+          if (response.status === 200) {
+            const token = response.data;
+            localStorage.setItem("token", token);
+            navigate("/tutorial");
+          }
+        })
+        .catch((error) => {
+          setError(error.message);
+        });
+    },
+    [data]
+  );
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">
@@ -50,7 +56,7 @@ const Login = () => {
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             title="exemplo@email.com"
             required
-            onChange={e => setData({ ...data, email: e.target.value })}
+            onChange={(e) => setData({ ...data, emailUsuario: e.target.value })}
           />
           <Input
             id="password"
@@ -60,7 +66,7 @@ const Login = () => {
             required
             pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*_=+-]).{4,16}$"
             title="A senha deve conter de 4 a 16 caracteres, sendo eles pelo menos uma letra minúscula, uma letra maiúscula, um número e um símbolo (!@#$%^*_=+-)"
-            onChange={e => setData({ ...data, password: e.target.value })}
+            onChange={(e) => setData({ ...data, senhaUsuario: e.target.value })}
           />
         </div>
 
@@ -87,25 +93,21 @@ const Login = () => {
         </div>
 
         <div className="flex flex-col items-center">
-          <Button
-            content="Entrar"
-            type="submit"
-            id="submit"
-            customClassName="px-12 uppercase"
-          />
+          <Button content="Entrar" type="submit" id="submit" customClassName="px-12 uppercase" />
           <div className="flex items-center justify-center text-xs pt-4">
             <p>Não possui uma conta?</p>
             <div className="text-sm px-1">
-              <a href="/register" className="font-bold text-indigo-600 hover:text-indigo-500 uppercase">
+              <a
+                href="/register"
+                className="font-bold text-indigo-600 hover:text-indigo-500 uppercase"
+              >
                 Criar
               </a>
             </div>
           </div>
         </div>
       </form>
-      <p className="text-red-700 text-center">
-        {error}
-      </p>
+      <p className="text-red-700 text-center">{error}</p>
     </div>
   );
 };
