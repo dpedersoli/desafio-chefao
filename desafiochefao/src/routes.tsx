@@ -10,6 +10,7 @@ import Welcome from "./pages/Welcome";
 import Goal from "./pages/Goal";
 import IntroTutorial from "./pages/IntroTutorial";
 import Tutorial from "./pages/Tutorial";
+import HomeTasks from './pages/HomeTasks';
 
 const AppRoutes = () => {
   const { isAuthenticated } = useContext(AuthContext)
@@ -24,6 +25,7 @@ const AppRoutes = () => {
         <Route path="/goal" element={<Goal />} />
         <Route path="/tutorial" element={<Tutorial />} />
         <Route path="/introtutorial" element={<IntroTutorial />} />
+        <Route path="/home-tasks" element={<HomeTasks />} />
       </Routes>
     </BrowserRouter>
   );
