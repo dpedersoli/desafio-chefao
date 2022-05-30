@@ -50,7 +50,7 @@ const Register = () => {
                 <Input
                   id="name"
                   content="Nome"
-                  placeholder="Nome Sobrenome"
+                  placeholder="Nome"
                   type="text"
                   autoComplete="name"
                   pattern="[a-zA-Z- ]{2,30}$"
