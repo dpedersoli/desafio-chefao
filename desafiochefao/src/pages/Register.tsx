@@ -1,4 +1,4 @@
-import Logo from "../components/Logo";
+import Logo from "../components/logo";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import HeaderArrow from "../components/HeaderArrow";
@@ -40,9 +40,10 @@ const Register = () => {
 
   return (
     <div>
+      <Logo />
       <HeaderArrow link="/login" />
+      <p className="text-center text-2xl font-semibold text-gray-900 mt-3">Olá! Crie sua conta</p>
       <div className="min-h-screen flex flex-col items-center p-4">
-        <Logo />
         <div className="w-96 max-w-full flex items-center justify-center pb-12 px-4 sm:px-6 lg:px-8">
           <div className="w-full space-y-8 flex flex-col">
             <form className="mt-8 space-y-6 w-full" onSubmit={handleSubmit}>
