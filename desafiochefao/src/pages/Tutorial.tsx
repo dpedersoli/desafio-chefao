@@ -1,6 +1,12 @@
 import { useState } from "react";
 import Button from "../components/Button";
 import Logo from "../components/logo";
+import imageOne from '/src/images/Tutorial-Image-01.png'
+import imageTwo from '/src/images/Tutorial-Image-02.png'
+import imageThree from '/src/images/Tutorial-Image-03.png'
+import imageFour from '/src/images/Tutorial-Image-04.png'
+import imageFive from '/src/images/Tutorial-Image-05.png'
+
 
 const Tutorial = () => {
   let [step, setStep] = useState(1);
@@ -8,37 +14,36 @@ const Tutorial = () => {
     {
       id: 1,
       title: "Acompanhe seu progresso",
-      image: "src/images/Tutorial-Image-01.png",
+      image: imageOne,
       imageAlt: "imagem ilustrada de homem manipulando um calendário com um relógio ao lado",
       text: "Conclua tarefas diárias, para avançar cada vez mais na sua meta",
     },
     {
       id: 2,
       title: "Aprenda de forma prática",
-      image: "src/images/Tutorial-Image-02.png",
+      image: imageTwo,
       imageAlt: "imagem ilustrada de mulher sentada mexendo no notebook",
       text: "Assista a vídeo-aulas que ajudarão a economizar dinheiro de forma simples",
     },
     {
       id: 3,
       title: "Esteja conectada",
-      image: "src/images/Tutorial-Image-03.png",
+      image: imageThree,
       imageAlt: "imagem ilustrada de três estrelas verdes com moedas e notas ao redor delas",
       text: "Acesse a plataforma diariamente e ganhe pontos",
     },
     {
       id: 4,
       title: "Ative o Lembrete",
-      image: "src/images/Tutorial-Image-04.png",
+      image: imageFour,
       imageAlt: "imagem ilustrada de vários relógios cercados por calendários",
       text: "Defina um lembrete diário e seja avisado sobre suas metas e premiações",
     },
     {
       id: 5,
       title: "Premiações",
-      image: "src/images/Tutorial-Image-05.png",
-      imageAlt:
-        "imagem ilustrada de um troféu azul de primeiro lugar cercado por duas estrelas e duas moedas",
+      image: imageFive,
+      imageAlt: "imagem ilustrada de um troféu azul de primeiro lugar cercado por duas estrelas e duas moedas",
       text: "Troque seus pontos por premiações e descontos com nossos parceiros",
     },
   ];

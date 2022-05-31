@@ -1,10 +1,11 @@
-import Logo from '../components/Logo'
+import Logo from '../components/logo'
 import Button from '../components/Button'
+import welcomeImage from '/src/images/intro.png'
 
 const Welcome = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
-      <img src="src\images\intro.png" alt="imagem ilutrada de mulher branca segurando um cofre em forma de porco com ícones de casa, calculadora, carro e cartões em volta dela" className="w-fit h-fit" />
+      <img src={welcomeImage} alt="imagem ilutrada de mulher branca segurando um cofre em forma de porco com ícones de casa, calculadora, carro e cartões em volta dela" className="w-fit h-fit" />
       <Logo />
       <div className="flex flex-col justify-evenly">
         <p className="flex w-fit text-base text-center text-gray-900">

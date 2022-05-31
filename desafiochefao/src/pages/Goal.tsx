@@ -1,4 +1,4 @@
-import HeaderArrow from '../components/HeaderArrow'
+import HeaderArrow from '../components/headerArrow'
 import Logo from "../components/logo"
 import Button from '../components/Button'
 

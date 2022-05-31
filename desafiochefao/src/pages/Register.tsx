@@ -1,7 +1,7 @@
 import Logo from "../components/logo";
 import Input from "../components/Input";
 import Button from "../components/Button";
-import HeaderArrow from "../components/HeaderArrow";
+import HeaderArrow from "../components/headerArrow";
 
 import api from "../services/api";
 import { useNavigate } from "react-router-dom";
@@ -27,11 +27,12 @@ const Register = () => {
         .post("/users/new", data)
         .then((response) => {
           if (response.status === 200) {
-            navigate("/login");
+            // navigate("/login");
+
           }
         })
         .catch((error) => {
-          setError(error.message);
+          setError(error.response.data.errorMessage);
         });
     },
     [data]

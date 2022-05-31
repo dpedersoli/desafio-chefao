@@ -1,0 +1,15 @@
+{
+  "short_name": "UpMoney App",
+  "name": "UpMoney App PWA",
+  "icons": [
+    {
+      "src": "/src/images/logo.png",
+      "type": "image/png",
+      "sizes": "170x49"
+    }
+  ],
+  "start_url": "https://ga-up-money.netlify.app/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#F5F6FB"
+}
