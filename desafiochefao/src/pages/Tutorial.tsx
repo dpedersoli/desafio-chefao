@@ -23,7 +23,7 @@ const Tutorial = () => {
   }
 
   return (
-    <div className="flex flex-col justify-evenly text-center px-12 min-h-screen">
+    <div className="flex flex-col justify-evenly items-center text-center px-12 min-h-screen">
       <Logo customImageClassName="mb-12" />
       <div >
         <img className="h-full" src={currentStep?.image} alt={currentStep?.imageAlt} />

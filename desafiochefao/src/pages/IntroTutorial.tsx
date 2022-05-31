@@ -18,7 +18,7 @@ const IntroTutorial = () => {
           <p className="flex w-fit text-base text-center text-gray-900">
             Aqui vamos te ajudar a alcançar a sua
             <br />
-            meta financeiras de forma prática
+            meta financeira de forma prática
           </p>
         </div>
         <img src="src\images\intro-tutorial.png" alt="imagem ilutrada de mulher branca de cabelo preto sentada sob um gráfico, mexendo em seu notebook" className="w-fit h-fit" />
