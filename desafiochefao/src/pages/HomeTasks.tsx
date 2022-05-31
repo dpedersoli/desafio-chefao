@@ -9,48 +9,48 @@ const HomeTasks = () => {
   const tasks = [
     {
       id: 1,
-      icon: TaskOne ,
+      icon: TaskOne,
       description: "Como conseguir guardar uma mesma quantia todo mês?"
     },
     {
       id: 2,
-      icon: TaskTwo ,
+      icon: TaskTwo,
       description: "Monte uma planilha simplificada + saiba mais"
     },
     {
       id: 3,
-      icon: TaskThree ,
+      icon: TaskThree,
       description: "Anote todos os seus gastos diários + saiba mais"
     },
     {
       id: 4,
-      icon: TaskFour ,
+      icon: TaskFour,
       description: "Tente sempre retirar 10% do seu salário sempre que receber + saiba mais"
     },
   ]
-  return(
+  return (
     <div className="px-7">
       <LogoOutside />
       <div className="flex items-center pl-1">
         <div>
-          <img src="src/images/perfil-badge.png" alt="imagem de perfil do usuário"/>
+          <img src="src/images/perfil-badge.png" alt="imagem de perfil do usuário" />
         </div>
         <div className="flex flex-col w-36 items-center justify-center">
           <div>
             <p className="mt-1 mb-2 text-center text-xl font-bold text-gray-900">Olá, Jane!</p>
           </div>
           <div className="flex items-center border rounded-[44px] py-1 px-3">
-            <img className="w-4 h-4" src="src\images\icons\pontos.png" alt="pontuação do usuário"/>
+            <img className="w-4 h-4" src="src\images\icons\pontos.png" alt="pontuação do usuário" />
             <div className="flex flex-col ml-1">
               <span className="text-[8px]">UP Pontos</span>
-               {/* Verificar cor correta */}
+              {/* Verificar cor correta */}
               <span className="text-[8px] text-sky-600">10</span>
             </div>
-            <hr className="border-l-2 h-5 m-1"/>
-            <img className="mx-1 w-4 h-4" src="src\images\icons\plano.png" alt="pontuação do usuário"/>
+            <hr className="border-l-2 h-5 m-1" />
+            <img className="mx-1 w-4 h-4" src="src\images\icons\plano.png" alt="pontuação do usuário" />
             <div className="flex flex-col">
               <span className="text-[8px]">Plano</span>
-               {/* Verificar cor correta */}
+              {/* Verificar cor correta */}
               <span className="text-[8px] text-sky-600">Free</span>
             </div>
           </div>
@@ -66,13 +66,13 @@ const HomeTasks = () => {
       <table>
         <thead >
           <tr>
-            <th className="w-10 h-10"><img src={DayOne} alt="Tarefas do dia 1"/></th>
+            <th className="w-10 h-10"><img src={DayOne} alt="Tarefas do dia 1" /></th>
             <th>Iniciante <span className="text-xs">(dia 1)</span></th>
           </tr>
         </thead>
         <tbody>
           {tasks.map((task) => {
-            return(
+            return (
               <tr key={task.id}>
                 <td className="text-center" ><input className="border rounded-full" type="checkbox" /></td>
                 <td className="flex items-center">
@@ -82,7 +82,7 @@ const HomeTasks = () => {
               </tr>
             )
           })}
-         
+
         </tbody>
       </table>
     </div>

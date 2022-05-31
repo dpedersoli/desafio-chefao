@@ -7,8 +7,8 @@ import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 
 interface Profile {
-  emailUsuario: string;
-  senhaUsuario: string;
+  email: string;
+  password: string;
 }
 
 const Login = () => {
@@ -56,7 +56,7 @@ const Login = () => {
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
               title="exemplo@email.com"
               required
-              onChange={(e) => setData({ ...data, emailUsuario: e.target.value })}
+              onChange={(e) => setData({ ...data, email: e.target.value })}
             />
             <Input
               id="password"
@@ -67,7 +67,7 @@ const Login = () => {
               required
               pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*_=+-]).{4,16}$"
               title="A senha deve conter de 4 a 16 caracteres, sendo eles pelo menos uma letra minúscula, uma letra maiúscula, um número e um símbolo (!@#$%^*_=+-)"
-              onChange={(e) => setData({ ...data, senhaUsuario: e.target.value })}
+              onChange={(e) => setData({ ...data, password: e.target.value })}
             />
           </div>
 
