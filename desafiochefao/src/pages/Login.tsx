@@ -1,4 +1,4 @@
-import Logo from "../components/Logo";
+import Logo from "../components/logo";
 import Input from "../components/Input";
 import Button from "../components/Button";
 
@@ -26,7 +26,7 @@ const Login = () => {
           if (response.status === 200) {
             const token = response.data;
             localStorage.setItem("token", token);
-            navigate("/tutorial");
+            navigate("/intro-tutorial");
           }
         })
         .catch((error) => {

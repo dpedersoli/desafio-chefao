@@ -33,7 +33,6 @@ const Register = () => {
         .catch((error) => {
           setError(error.message);
         });
-      console.log(data);
     },
     [data]
   );
@@ -51,7 +50,7 @@ const Register = () => {
                 <Input
                   id="name"
                   content="Nome"
-                  placeholder="Nome"
+                  placeholder="Nome Sobrenome"
                   type="text"
                   autoComplete="name"
                   pattern="[a-zA-Z- ]{2,30}$"

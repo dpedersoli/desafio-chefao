@@ -53,6 +53,23 @@ const Tutorial = () => {
     }
   };
 
+  ///////////////////LIXO -> MUDAR PARA -> SWIPE LEFT/RIGHT////////////////////
+  const previousStep = () => {
+    if (step != steps.length && step > 1) {
+      setStep(step - 1)
+    }
+  }
+
+  const nextStep = (answer: string) => {
+    setSavedAnswers([...savedAnswers, answer])
+    if (step === steps.length) {
+      //submit()
+    } else {
+      setStep(step + 1)
+    }
+  }
+  ///////////////////LIXO -> MUDAR PARA -> SWIPE LEFT/RIGHT////////////////////
+
   return (
     <div className="flex flex-col justify-evenly items-center text-center px-12 min-h-screen">
       <Logo customImageClassName="mb-12" />
@@ -78,7 +95,7 @@ const Tutorial = () => {
         ))}
       </div>
       <div className="flex justify-center">
-        {step == 5 ? (
+        {/* {step == 5 ? (
           <a href="/goal">
             <Button content="VAMOS COMEÇAR" />
           </a>
@@ -88,7 +105,17 @@ const Tutorial = () => {
               Pular{" "}
             </span>
           </div>
-        )}
+        )} */}
+
+        {/* ///////////////////LIXO -> MUDAR PARA -> SWIPE LEFT/RIGHT -> DESCOMENTAR ACIMA //////////////////// */}
+        <div className="flex justify-center mt-4">
+          {step == 5
+            ?
+            <a href="/goal"><Button content="Começar Planejamento" /></a>
+            :
+            <div className="flex justify-between w-28"><span onClick={() => previousStep()} className="text-indigo-600 hover:text-indigo-500 text-sm">{'<'} Voltar</span> <span onClick={() => nextStep('')} className="text-indigo-600 hover:text-indigo-500 text-sm">Pular {'>'} </span></div>}
+          {/* ///////////////////LIXO -> MUDAR PARA -> SWIPE LEFT/RIGHT -> DESCOMENTAR ACIMA //////////////////// */}
+        </div>
       </div>
     </div>
   );

@@ -25,7 +25,7 @@ const Goal = () => {
         </div>
         <div className="pt-9 w-full">
           <Button content="Sair das dívidas" customClassName="!bg-white !text-black drop-shadow !font-normal !my-4 !h-12" leftImage="src\images\Goals\sair-das-dividas.png" />
-          <a href="/">
+          <a href="/home-tasks">
             <Button content="Juntar dinheiro" customClassName="!bg-white !text-black drop-shadow !font-normal !my-4 !h-12" leftImage="src\images\Goals\juntar-dinheiro.png" />
           </a>
           <Button content="Começar a investir" customClassName="!bg-white !text-black drop-shadow !font-normal !my-4 !h-12" leftImage="src\images\Goals\comecar-a-investir.png" />
