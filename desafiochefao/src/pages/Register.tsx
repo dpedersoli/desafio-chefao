@@ -1,41 +1,49 @@
-import Logo from "../components/Logo";
-import Input from "../components/Input"
-import Button from "../components/Button"
-import HeaderArrow from '../components/HeaderArrow'
+import Logo from "../components/logo";
+import Input from "../components/Input";
+import Button from "../components/Button";
+import HeaderArrow from "../components/HeaderArrow";
 
 import api from "../services/api";
 import { useNavigate } from "react-router-dom";
-import { useState, useCallback, FormEvent } from 'react'
+import { useState, useCallback, FormEvent } from "react";
 
 interface Profile {
-  name: string;
-  email: string;
-  password: string;
+  nomeUsuario: string;
+  emailUsuario: string;
+  senhaUsuario: string;
   checkPassword: string;
-};
+}
 
 const Register = () => {
-  const [data, setData] = useState<Profile>({} as Profile)
-  const [error, setError] = useState('')
+  const [data, setData] = useState<Profile>({} as Profile);
+  const [error, setError] = useState("");
 
   let navigate = useNavigate();
 
-  const handleSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    api.post('/users/new', data).then(response => {
-      if (response.status === 200) {
-        navigate('/login')
-      }
-    }).catch(error => {
-      setError(error.message)
-    })
-  }, [data])
+  const handleSubmit = useCallback(
+    (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      api
+        .post("/users/new", data)
+        .then((response) => {
+          if (response.status === 200) {
+            navigate("/login");
+          }
+        })
+        .catch((error) => {
+          setError(error.message);
+        });
+      console.log(data);
+    },
+    [data]
+  );
 
   return (
     <div>
+      <Logo />
       <HeaderArrow link="/login" />
+      <p className="text-center text-2xl font-semibold text-gray-900 mt-3">Olá! Crie sua conta</p>
       <div className="min-h-screen flex flex-col items-center p-4">
-        <Logo />
         <div className="w-96 max-w-full flex items-center justify-center pb-12 px-4 sm:px-6 lg:px-8">
           <div className="w-full space-y-8 flex flex-col">
             <form className="mt-8 space-y-6 w-full" onSubmit={handleSubmit}>
@@ -43,13 +51,13 @@ const Register = () => {
                 <Input
                   id="name"
                   content="Nome"
-                  placeholder="Nome Sobrenome"
+                  placeholder="Nome"
                   type="text"
                   autoComplete="name"
                   pattern="[a-zA-Z- ]{2,30}$"
                   title="Apenas letras são aceitas"
                   required
-                  onChange={e => setData({ ...data, name: e.target.value })}
+                  onChange={(e) => setData({ ...data, nomeUsuario: e.target.value })}
                 />
                 <Input
                   id="email-address"
@@ -60,7 +68,7 @@ const Register = () => {
                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                   title="exemplo@email.com"
                   required
-                  onChange={e => setData({ ...data, email: e.target.value })}
+                  onChange={(e) => setData({ ...data, emailUsuario: e.target.value })}
                 />
                 <Input
                   id="password"
@@ -70,7 +78,7 @@ const Register = () => {
                   required
                   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*_=+-]).{4,16}$"
                   title="A senha deve conter de 4 a 16 caracteres, sendo eles pelo menos uma letra minúscula, uma letra maiúscula, um número e um símbolo (!@#$%^*_=+-)"
-                  onChange={e => setData({ ...data, password: e.target.value })}
+                  onChange={(e) => setData({ ...data, senhaUsuario: e.target.value })}
                 />
                 <Input
                   id="check-password"
@@ -92,26 +100,25 @@ const Register = () => {
                 <div className="flex items-center justify-center text-xs pt-4">
                   Já possui uma conta?
                   <div className="text-sm px-1">
-                    <a href="/login" className="font-medium text-indigo-600 hover:text-indigo-500 uppercase">
+                    <a
+                      href="/login"
+                      className="font-medium text-indigo-600 hover:text-indigo-500 uppercase"
+                    >
                       Entrar
                     </a>
                   </div>
                 </div>
               </div>
             </form>
-            <p className="text-red-700 text-center">
-              {error}
-            </p>
+            <p className="text-red-700 text-center">{error}</p>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Register;
-
-
 
 /*<div>
 <label htmlFor="password" className="sr-only">

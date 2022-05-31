@@ -3,7 +3,7 @@ interface Props extends React.InputHTMLAttributes<HTMLImageElement> {
 } //aceita elementos HTML dentro do component
 
 const LogoOutside = ({ customImageClassName, ...props }: Props) => {
-  const imageClassName = ["flex flex-col mx-auto h-fit mb-2 w-auto", customImageClassName].join(" ")
+  const imageClassName = ["flex flex-col mx-auto h-fit mb-2 w-auto mt-4", customImageClassName].join(" ")
   return (
     <>
       <header>
