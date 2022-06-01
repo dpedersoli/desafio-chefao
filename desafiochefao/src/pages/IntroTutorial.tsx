@@ -1,11 +1,26 @@
+import { useEffect, useState } from 'react'
+
 import Logo from '../components/logo'
 import Button from '../components/Button'
-import axios from "axios";
+import api from "../services/api";
+// import Username from '../components/UserName'
 
 import IntroTutorialImage from '/src/images/intro-tutorial.png'
 
+interface User {
+  name: string;
+}
+
 const IntroTutorial = () => {
-  const name = 'Daniel'
+  const [data, setData] = useState<User>({} as User)
+
+  useEffect(() => {
+    api.get("/users/username")
+      .then(response => {
+        setData(response.data)
+      })
+      .catch(error => error)
+  }, [])
 
   return (
     <div>
@@ -13,7 +28,7 @@ const IntroTutorial = () => {
         <Logo customImageClassName="mb-20" />
         <div className="flex flex-col justify-evenly">
           <p className="mt-1 mb-2 text-center text-xl font-bold text-gray-900">
-            Olá! {name}, seja bem vinde!
+            Olá! {data.name}, seja bem vinde!
           </p>
         </div>
         <div className="flex flex-col justify-evenly">

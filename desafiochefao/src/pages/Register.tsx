@@ -51,13 +51,13 @@ const Register = () => {
                 <Input
                   id="name"
                   content="Nome"
-                  placeholder="Nome Sobrenome"
+                  placeholder="Primeiro Nome"
                   type="text"
                   autoComplete="name"
                   pattern="[a-zA-Z- ]{2,30}$"
                   title="Apenas letras são aceitas"
                   required
-                  onChange={(e) => setData({ ...data, name: e.target.value })}
+                  onChange={(e) => setData({ ...data, name: e.target.value.replace(" ", "") })}
                 />
                 <Input
                   id="email-address"
