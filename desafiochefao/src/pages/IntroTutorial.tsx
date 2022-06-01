@@ -13,9 +13,15 @@ interface User {
 
 const IntroTutorial = () => {
   const [data, setData] = useState<User>({} as User)
+  let token: any = ""
 
   useEffect(() => {
-    api.get("/users/username")
+    token = localStorage.getItem("token")
+    api.get("/users/username", {
+      headers: {
+        authorization: token
+      }
+    })
       .then(response => {
         setData(response.data)
       })
