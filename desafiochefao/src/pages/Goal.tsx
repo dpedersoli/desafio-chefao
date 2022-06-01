@@ -2,6 +2,12 @@ import HeaderArrow from '../components/headerArrow'
 import Logo from "../components/logo"
 import Button from '../components/Button'
 
+import ImageButtonOne from '/src/images/Goals/sair-das-dividas.png'
+import ImageButtonTwo from '/src/images/Goals/juntar-dinheiro.png'
+import ImageButtonThree from '/src/images/Goals/comecar-a-investir.png'
+import ImageButtonFour from '/src/images/Goals/otimizar-investimentos.png'
+
+
 import { useState } from "react";
 import axios from "axios";
 
@@ -24,12 +30,12 @@ const Goal = () => {
           </p>
         </div>
         <div className="pt-9 w-full">
-          <Button content="Sair das dívidas" customClassName="!bg-white !text-black drop-shadow !font-normal !my-4 !h-12" leftImage="src\images\Goals\sair-das-dividas.png" />
+          <Button content="Sair das dívidas" customClassName="!bg-white !text-black drop-shadow !font-normal !my-4 !h-12" leftImage={ImageButtonOne} />
           <a href="/home-tasks">
-            <Button content="Juntar dinheiro" customClassName="!bg-white !text-black drop-shadow !font-normal !my-4 !h-12" leftImage="src\images\Goals\juntar-dinheiro.png" />
+            <Button content="Juntar dinheiro" customClassName="!bg-white !text-black drop-shadow !font-normal !my-4 !h-12" leftImage={ImageButtonTwo} />
           </a>
-          <Button content="Começar a investir" customClassName="!bg-white !text-black drop-shadow !font-normal !my-4 !h-12" leftImage="src\images\Goals\comecar-a-investir.png" />
-          <Button content="Otimizar investimentos" customClassName="!bg-white !text-black drop-shadow !font-normal !my-4 !h-12" leftImage="src\images\Goals\otimizar-investimentos.png" />
+          <Button content="Começar a investir" customClassName="!bg-white !text-black drop-shadow !font-normal !my-4 !h-12" leftImage={ImageButtonThree} />
+          <Button content="Otimizar investimentos" customClassName="!bg-white !text-black drop-shadow !font-normal !my-4 !h-12" leftImage={ImageButtonFour} />
         </div>
       </div>
     </div>

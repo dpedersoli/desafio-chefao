@@ -2,6 +2,8 @@ import Logo from '../components/logo'
 import Button from '../components/Button'
 import axios from "axios";
 
+import IntroTutorialImage from '/src/images/intro-tutorial.png'
+
 const IntroTutorial = () => {
   const name = 'Daniel'
 
@@ -21,7 +23,7 @@ const IntroTutorial = () => {
             meta financeira de forma prática
           </p>
         </div>
-        <img src="src\images\intro-tutorial.png" alt="imagem ilutrada de mulher branca de cabelo preto sentada sob um gráfico, mexendo em seu notebook" className="w-fit h-fit" />
+        <img src={IntroTutorialImage} alt="imagem ilutrada de mulher branca de cabelo preto sentada sob um gráfico, mexendo em seu notebook" className="w-fit h-fit" />
         <a href="/tutorial">
           <Button
             content="Veja como é Fácil"

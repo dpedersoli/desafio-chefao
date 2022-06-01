@@ -1,9 +1,13 @@
-import LogoOutside from "../components/logo";
+import Logo from "../components/logo";
 import TaskOne from '../images/icons/day-1-tasks/task-1.png'
 import TaskTwo from '../images/icons/day-1-tasks/task-2.png'
 import TaskThree from '../images/icons/day-1-tasks/task-3.png'
 import TaskFour from '../images/icons/day-1-tasks/task-4.png'
 import DayOne from '../images/icons/day-1-tasks/day-1-icon.png'
+
+import Avatar from '/src/images/perfil-badge.png'
+import Points from '/src/images/icons/pontos.png'
+import IconPerson from '/src/images/icons/plano.png'
 
 const HomeTasks = () => {
   const tasks = [
@@ -30,24 +34,24 @@ const HomeTasks = () => {
   ]
   return (
     <div className="px-7">
-      <LogoOutside />
+      <Logo />
       <div className="flex items-center pl-1">
         <div>
-          <img src="src/images/perfil-badge.png" alt="imagem de perfil do usuário" />
+          <img src={Avatar} alt="imagem de perfil do usuário" />
         </div>
         <div className="flex flex-col w-36 items-center justify-center">
           <div>
             <p className="mt-1 mb-2 text-center text-xl font-bold text-gray-900">Olá, Jane!</p>
           </div>
           <div className="flex items-center border rounded-[44px] py-1 px-3">
-            <img className="w-4 h-4" src="src\images\icons\pontos.png" alt="pontuação do usuário" />
+            <img className="w-4 h-4" src={Points} alt="pontuação do usuário" />
             <div className="flex flex-col ml-1">
               <span className="text-[8px]">UP Pontos</span>
               {/* Verificar cor correta */}
               <span className="text-[8px] text-sky-600">10</span>
             </div>
             <hr className="border-l-2 h-5 m-1" />
-            <img className="mx-1 w-4 h-4" src="src\images\icons\plano.png" alt="pontuação do usuário" />
+            <img className="mx-1 w-4 h-4" src={IconPerson} alt="pontuação do usuário" />
             <div className="flex flex-col">
               <span className="text-[8px]">Plano</span>
               {/* Verificar cor correta */}
