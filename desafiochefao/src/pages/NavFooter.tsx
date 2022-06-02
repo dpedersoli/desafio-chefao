@@ -6,6 +6,10 @@ import { SwitchHorizontalIcon } from '@heroicons/react/solid';
 import { StarIcon } from '@heroicons/react/solid';
 
 import HomeTasks from '../components/Tasks';
+import Videos from '../components/Videos'
+import TradePoints from '../components/TradePoints'
+import Premium from '../components/Premium'
+
 
 const FooterNav = () => {
   const [tasks, setTasks] = useState(true)
@@ -17,40 +21,60 @@ const FooterNav = () => {
     <div>
       <div>
         {tasks && <HomeTasks />}
-        {videos && <HomeTasks />}
-        {trade && <HomeTasks />}
-        {premium && <HomeTasks />}
+        {videos && <Videos />}
+        {trade && <TradePoints />}
+        {premium && <Premium />}
       </div>
       <div className="flex items-center justify-around w-full py-1 bg-white text-zinc-400 text-xs fixed bottom-0">
         <button
-          className="active:text-blue-600"
+          className="hover:text-blue-600"
           // href="/home-tasks" 
-          onClick={() => { setTasks(true) }}
+          onClick={() => {
+            setTasks(true)
+            setVideos(false)
+            setTrade(false)
+            setPremium(false)
+          }}
         >
-          <CalendarIcon className="h-5 w-5 ml-2 mb-1 group-hover:text-Zinc-50 mr-2 active:text-blue-600" aria-hidden="true" />
+          <CalendarIcon className="h-5 w-5 ml-2 mb-1 group-hover:text-Zinc-50 mr-2 hover:text-blue-600" aria-hidden="true" />
           Tarefas
         </button>
         <button
           // href="/videos"
-          className="active:text-blue-600"
-          onClick={() => { setVideos(true) }}
+          className="hover:text-blue-600"
+          onClick={() => {
+            setTasks(false)
+            setVideos(true)
+            setTrade(false)
+            setPremium(false)
+          }}
         >
-          <PlayIcon className="h-5 w-5 ml-2 mb-1 group-hover:text-Zinc-50 mr-2 active:text-blue-600" aria-hidden="true" />
+          <PlayIcon className="h-5 w-5 ml-2 mb-1 group-hover:text-Zinc-50 mr-2 hover:text-blue-600" aria-hidden="true" />
           Assista
         </button>
         <button
           // href="/trade-score"
-          className="active:text-blue-600">
-          <SwitchHorizontalIcon className="h-5 w-5 ml-7 mb-1 group-hover:text-Zinc-50 mr-2 active:text-blue-600" aria-hidden="true"
-            onClick={() => { setTrade(true) }}
+          className="hover:text-blue-600">
+          <SwitchHorizontalIcon className="h-5 w-5 ml-7 mb-1 group-hover:text-Zinc-50 mr-2 hover:text-blue-600" aria-hidden="true"
+            onClick={() => {
+              setTasks(false)
+              setVideos(false)
+              setTrade(true)
+              setPremium(false)
+            }}
           />
           Trocar Pontos
         </button>
         <button
           // href="/premium"
-          className="active:text-blue-600">
-          <StarIcon className="h-5 w-5 ml-7 mb-1 group-hover:text-Zinc-50 mr-2 active:text-blue-600" aria-hidden="true"
-            onClick={() => { setPremium(true) }}
+          className="hover:text-blue-600">
+          <StarIcon className="h-5 w-5 ml-7 mb-1 group-hover:text-Zinc-50 mr-2 hover:text-blue-600" aria-hidden="true"
+            onClick={() => {
+              setTasks(false)
+              setVideos(false)
+              setTrade(false)
+              setPremium(true)
+            }}
           />
           Up Premium
         </button>
@@ -60,8 +84,3 @@ const FooterNav = () => {
 }
 
 export default FooterNav;
-
-//calendar
-//play
-//switch-horizontal
-//star

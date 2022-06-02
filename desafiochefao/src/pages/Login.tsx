@@ -85,7 +85,7 @@ const Login = () => {
             </div>
             <div className="text-sm">
               <a
-                href="/passwordrecovery"
+                href="/password-recovery"
                 className="text-sm text-indigo-600 hover:text-indigo-500 pl-1"
               >
                 Esqueci a senha

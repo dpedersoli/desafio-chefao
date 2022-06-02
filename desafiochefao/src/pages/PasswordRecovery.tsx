@@ -7,9 +7,9 @@ export default function Login() {
 
   return (
     <div>
+      <Logo />
       <HeaderArrow link="/login" />
-      <div className="min-h-screen flex flex-col items-center p-4">
-        <Logo customImageClassName="pb-20" />
+      <div className="min-h-screen flex flex-col items-center p-4 my-20">
         <div className="flex flex-col justify-evenly">
           <p className="text-center text-xl font-bold text-gray-900">Recuperar Senha
           </p>
