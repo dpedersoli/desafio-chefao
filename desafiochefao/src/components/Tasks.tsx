@@ -1,5 +1,7 @@
-import Logo from "../components/logo";
-import NavFooter from '../components/NavFooter'
+import { useEffect, useState } from 'react'
+import api from "../services/api";
+
+import Logo from "./logo";
 
 import TaskOne from '../images/icons/day-1-tasks/task-1.png'
 import TaskTwo from '../images/icons/day-1-tasks/task-2.png'
@@ -11,7 +13,27 @@ import Avatar from '/src/images/perfil-badge.png'
 import Points from '/src/images/icons/pontos.png'
 import IconPerson from '/src/images/icons/plano.png'
 
+interface User {
+  name: string;
+}
+
 const HomeTasks = () => {
+  const [data, setData] = useState<User>({} as User)
+  let token: any = ""
+
+  useEffect(() => {
+    token = localStorage.getItem("token")
+    api.get("/users/username", {
+      headers: {
+        authorization: token
+      }
+    })
+      .then(response => {
+        setData(response.data)
+      })
+      .catch(error => error)
+  }, [])
+
   const tasks = [
     {
       id: 1,
@@ -44,7 +66,7 @@ const HomeTasks = () => {
           </div>
           <div className="flex flex-col w-36 items-center justify-center">
             <div>
-              <p className="mt-1 mb-2 text-center text-xl font-bold text-gray-900">Olá, Jane!</p>
+              <p className="mt-1 mb-2 text-center text-xl font-bold text-gray-900">Olá, {data.name}!</p>
             </div>
             <div className="flex items-center border rounded-[44px] py-1 px-3">
               <img className="w-4 h-4" src={Points} alt="pontuação do usuário" />
@@ -81,28 +103,7 @@ const HomeTasks = () => {
             {tasks.map((task) => {
               return (
                 <tr key={task.id}>
-                  <td className="text-center" ><input className="border rounded-full" type="checkbox" /></td>
-                  <td className="flex items-center">
-                    <img className="w-12 h-12" src={task.icon} alt={task.description} />
-                    <span className="text-xs ml-3">{task.description}</span>
-                  </td>
-                </tr>
-              )
-            })}
-          </tbody>
-        </table>
-        <table>
-          <thead >
-            <tr>
-              <th className="w-10 h-10"><img src={DayTwo} alt="Tarefas do dia 1" /></th>
-              <th>Aprendiz de Finanças <span className="text-xs">(dia 2)</span></th>
-            </tr>
-          </thead>
-          <tbody>
-            {tasks.map((task) => {
-              return (
-                <tr key={task.id}>
-                  <td className="text-center" ><input className="border rounded-full" type="checkbox" /></td>
+                  <td className="text-center " ></td>
                   <td className="flex items-center">
                     <img className="w-12 h-12" src={task.icon} alt={task.description} />
                     <span className="text-xs ml-3">{task.description}</span>
@@ -113,9 +114,9 @@ const HomeTasks = () => {
           </tbody>
         </table>
       </div>
-      <div className="absolute bottom-12">
+      {/* <div className="absolute bottom-12">
         <NavFooter />
-      </div>
+      </div> */}
     </div>
   );
 }

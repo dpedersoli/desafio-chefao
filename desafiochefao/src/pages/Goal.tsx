@@ -31,7 +31,7 @@ const Goal = () => {
         </div>
         <div className="pt-9 w-full">
           <Button content="Sair das dívidas" customClassName="!bg-white !text-black drop-shadow !font-normal !my-4 !h-12" leftImage={ImageButtonOne} />
-          <a href="/home-tasks">
+          <a href="/home">
             <Button content="Juntar dinheiro" customClassName="!bg-white !text-black drop-shadow !font-normal !my-4 !h-12" leftImage={ImageButtonTwo} />
           </a>
           <Button content="Começar a investir" customClassName="!bg-white !text-black drop-shadow !font-normal !my-4 !h-12" leftImage={ImageButtonThree} />

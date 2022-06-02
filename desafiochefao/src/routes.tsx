@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import { AuthContext } from './providers/AutheticationContext';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import PasswordRecovery from "./pages/PasswordRecovery";
@@ -10,7 +9,7 @@ import Welcome from "./pages/Welcome";
 import Goal from "./pages/Goal";
 import IntroTutorial from "./pages/IntroTutorial";
 import Tutorial from "./pages/Tutorial";
-import HomeTasks from './pages/HomeTasks';
+import Home from './pages/NavFooter';
 
 const AppRoutes = () => {
   const { isAuthenticated } = useContext(AuthContext)
@@ -25,7 +24,7 @@ const AppRoutes = () => {
         <Route path="/goal" element={<Goal />} />
         <Route path="/tutorial" element={<Tutorial />} />
         <Route path="/intro-tutorial" element={<IntroTutorial />} />
-        <Route path="/home-tasks" element={<HomeTasks />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );
