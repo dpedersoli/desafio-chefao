@@ -1,6 +1,9 @@
+//armazenar as informações dessa página 'Goal' e pular essa parte quando o usuário já tiver essa etapa concluída ('isGoalSet(true/false)')
+
 import HeaderArrow from '../components/headerArrow'
 import Logo from "../components/logo"
 import Button from '../components/Button'
+import CommingSoonModal from '../components/modal/CommingSoon'
 
 import ImageButtonOne from '/src/images/Goals/sair-das-dividas.png'
 import ImageButtonTwo from '/src/images/Goals/juntar-dinheiro.png'
@@ -10,8 +13,19 @@ import ImageButtonFour from '/src/images/Goals/otimizar-investimentos.png'
 
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Goal = () => {
+  const [modal, setModal] = useState(false)
+
+  const showModal = () => {
+    setModal(!modal)
+  }
+
+  let navigate = useNavigate();
+  const homePage = () => {
+    navigate('/home')
+  }
 
   return (
     <div>
@@ -30,14 +44,41 @@ const Goal = () => {
           </p>
         </div>
         <div className="pt-9 w-full">
-          <Button content="Sair das dívidas" customClassName="!bg-white !text-black drop-shadow !font-normal !my-4 !h-12" leftImage={ImageButtonOne} />
-          <a href="/home">
-            <Button content="Juntar dinheiro" customClassName="!bg-white !text-black drop-shadow !font-normal !my-4 !h-12" leftImage={ImageButtonTwo} />
-          </a>
-          <Button content="Começar a investir" customClassName="!bg-white !text-black drop-shadow !font-normal !my-4 !h-12" leftImage={ImageButtonThree} />
-          <Button content="Otimizar investimentos" customClassName="!bg-white !text-black drop-shadow !font-normal !my-4 !h-12" leftImage={ImageButtonFour} />
+          <Button
+            content="Sair das dívidas"
+            customClassName="!bg-white !text-black drop-shadow !font-normal !my-4 !h-12"
+            leftImage={ImageButtonOne}
+            onClick={showModal}
+          />
+          <Button
+            content="Juntar dinheiro"
+            customClassName="!bg-white !text-black drop-shadow !font-normal !my-4 !h-12"
+            leftImage={ImageButtonTwo}
+            onClick={homePage}
+          />
+          <Button
+            content="Começar a investir"
+            customClassName="!bg-white !text-black drop-shadow !font-normal !my-4 !h-12"
+            leftImage={ImageButtonThree}
+            onClick={showModal}
+          />
+          <Button
+            content="Otimizar investimentos"
+            customClassName="!bg-white !text-black drop-shadow !font-normal !my-4 !h-12"
+            leftImage={ImageButtonFour}
+            onClick={showModal}
+          />
         </div>
       </div>
+      {modal && (
+        <div>
+          <div className="w-60 h-fit top-80 left-20 fixed">
+            <CommingSoonModal />
+          </div>
+        </div>
+      )}
+      {/* PRECISO ARRUMAR UM JEITO MELHOR DE FECHAR ESSA TELA SEM USAR ALTERAÇÃO DO ESTADO -> pois o estado só retorna para 'false' depois de 1 click p/ depois do segundo click ele mudar de novo para 'true' e abrir o modal */}
+
     </div>
   )
 };

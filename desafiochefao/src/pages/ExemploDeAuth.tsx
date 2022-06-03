@@ -9,8 +9,7 @@ const Home = () => {
   return (
     <>
       <div>
-        {/* <HeaderArrow />
-        {user.isGoalSet ? <div>retorna tela 'home'</div> : <Goals />} */}
+        {user.isGoalSet ? <div>retorna tela 'home'</div> : <Goals />}
 
 
 
