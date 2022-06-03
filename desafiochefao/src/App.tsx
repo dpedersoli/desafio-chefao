@@ -4,7 +4,7 @@ import AuthenticationProvider from "./providers/AutheticationContext";
 function App() {
   return (
     <AuthenticationProvider>
-      <div>
+      <div className="h-screen">
         <AppRoutes />
       </div>
     </AuthenticationProvider>

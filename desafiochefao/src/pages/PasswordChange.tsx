@@ -1,24 +1,32 @@
 import { useState, useCallback, FormEvent } from "react";
 import api from "../services/api";
+import { useParams } from "react-router-dom";
 import Logo from "../components/logo";
 import Button from "../components/Button";
 import Input from "../components/Input";
 import HeaderArrow from "../components/headerArrow";
 
 interface Profile {
-  email: string;
+  password: string;
 }
 
-export default function PasswordRecovery() {
+export default function PasswordChange() {
   const [data, setData] = useState<Profile>({} as Profile);
   const [message, setMessage] = useState("");
   const [textColor, setTextColor] = useState("");
+  const urlParams = new URLSearchParams(window.location.search);
 
   const handleSubmit = useCallback(
     (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       api
-        .post("/users/password-recovery", data)
+        .put("/users/password-change", data, {
+          headers: {
+            Authorization: `Bearer ${urlParams.get("token")}`,
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        })
         .then((response) => {
           if (response.status === 200) {
             setMessage(response.data.message);
@@ -37,32 +45,29 @@ export default function PasswordRecovery() {
     <div>
       <Logo />
       <HeaderArrow link="/login" />
-
-      <div className="min-h-screen flex flex-col items-center p-4 my-20">
+      <div className="min-h-screen flex flex-col items-center p-4">
         <div className="flex flex-col justify-evenly">
-          <p className="text-center text-xl font-bold text-gray-900">Recuperar Senha</p>
+          <p className="text-center text-xl font-bold text-gray-900">Alterar Senha</p>
           <br />
-          <p className="mt-6 text-center text-base text-gray-900">
-            Digite seu e-mail e te enviaremos um e-mail para criar uma nova senha
-          </p>
+          <p className="mt-6 text-center text-base text-gray-900">Digite sua nova senha</p>
         </div>
         <div className="w-96 max-w-full flex items-center justify-center pb-12 px-4 sm:px-6 lg:px-8">
           <form
             className="my-6 space-y-6 w-full"
-            action="/password-recovery"
+            action="/password-change"
             method="POST"
             onSubmit={handleSubmit}
           >
             <Input
-              id="email-address"
-              content="E-mail"
-              placeholder="email@provider.com"
-              type="email"
-              autoComplete="email"
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-              title="exemplo@email.com"
+              id="password"
+              content="Senha"
+              type="password"
+              placeholder="********"
+              autoComplete="current-password"
               required
-              onChange={(e) => setData({ email: e.target.value })}
+              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*_=+-]).{4,16}$"
+              title="A senha deve conter de 4 a 16 caracteres, sendo eles pelo menos uma letra minúscula, uma letra maiúscula, um número e um símbolo (!@#$%^*_=+-)"
+              onChange={(e) => setData({ password: e.target.value })}
             />
 
             <div className="flex flex-col items-center">
@@ -75,8 +80,10 @@ export default function PasswordRecovery() {
             </div>
           </form>
         </div>
+        <div>
+          <p className={textColor}>{message}</p>
+        </div>
       </div>
-      <p className={textColor}>{message}</p>
     </div>
   );
 }

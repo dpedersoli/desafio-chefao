@@ -12,6 +12,9 @@ module.exports = {
         },
         background: {
           100: '#F5F6FB'
+        },
+        green: {
+          100: '#DFFFC6'
         }
       },
       backgroundImage: {
