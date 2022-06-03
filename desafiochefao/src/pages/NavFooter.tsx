@@ -5,6 +5,7 @@ import { PlayIcon } from '@heroicons/react/solid';
 import { SwitchHorizontalIcon } from '@heroicons/react/solid';
 import { StarIcon } from '@heroicons/react/solid';
 
+import Logo from '../components/logo'
 import HomeTasks from '../components/Tasks';
 import Videos from '../components/Videos'
 import TradePoints from '../components/TradePoints'
@@ -19,6 +20,7 @@ const FooterNav = () => {
 
   return (
     <div>
+      <Logo />
       <div>
         {tasks && <HomeTasks />}
         {videos && <Videos />}

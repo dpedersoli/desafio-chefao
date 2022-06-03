@@ -1,6 +1,6 @@
 const TradePoints = () => {
   return (
-    <div>
+    <div className="mx-7">
 
     </div>
   )
