@@ -88,7 +88,7 @@ const Tutorial = () => {
       </div>
       <div className="text-lg font-bold">{currentStep?.title}</div>
       <div className="text-base w-fit">{currentStep?.text}</div>
-      <div className="flex justify-center ">
+      {/* <div className="flex justify-center ">
         {steps.map(({ id }) => (
           <div
             key={id}
@@ -98,8 +98,8 @@ const Tutorial = () => {
             ].join(" ")}
           ></div>
         ))}
-      </div>
-      <div className="flex justify-center">
+      </div> */}
+      <div className="w-full">
         {/* {step == 5 ? (
           <a href="/goal">
             <Button content="VAMOS COMEÇAR" />
@@ -113,12 +113,15 @@ const Tutorial = () => {
         )} */}
 
         {/* ///////////////////LIXO -> MUDAR PARA -> SWIPE LEFT/RIGHT -> DESCOMENTAR ACIMA //////////////////// */}
-        <div className="flex justify-center mt-4">
+        <div className="flex w-full justify-evenly mt-4">
           {step == 5
             ?
             <a href="/goal"><Button content="Começar Planejamento" /></a>
             :
-            <div className="flex justify-between w-28"><span onClick={() => previousStep()} className="text-indigo-600 hover:text-indigo-500 text-sm">{'<'} Voltar</span> <span onClick={() => nextStep('')} className="text-indigo-600 hover:text-indigo-500 text-sm">Pular {'>'} </span></div>}
+            <div className="flex justify-between w-full">
+              <p onClick={() => previousStep()} className="text-Slate-50 hover:text-Zinc-50 text-base">{'<'} Anterior</p>
+              <p onClick={() => nextStep('')} className="text-Slate-50 hover:text-Zinc-50 text-base">Próximo {'>'} </p>
+            </div>}
           {/* ///////////////////LIXO -> MUDAR PARA -> SWIPE LEFT/RIGHT -> DESCOMENTAR ACIMA //////////////////// */}
         </div>
       </div>

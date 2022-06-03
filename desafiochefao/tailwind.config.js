@@ -13,6 +13,9 @@ module.exports = {
         background: {
           100: '#F5F6FB'
         }
+      },
+      backgroundImage: {
+        'search-icon': "url('/src/images/icons/videos/lupa.png')"
       }
     },
   },

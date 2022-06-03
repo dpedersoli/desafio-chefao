@@ -2,6 +2,7 @@ import Logo from "../components/logo";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import HeaderArrow from "../components/headerArrow";
+import CreateAccountSucess from '../components/modal/CreateAccountSuccess'
 
 import api from "../services/api";
 import { useNavigate } from "react-router-dom";
@@ -17,8 +18,12 @@ interface Profile {
 const Register = () => {
   const [data, setData] = useState<Profile>({} as Profile);
   const [error, setError] = useState("");
+  const [modal, setModal] = useState(false)
 
-  let navigate = useNavigate();
+  const showModal = () => {
+    setModal(true)
+  }
+
 
   const handleSubmit = useCallback(
     (e: FormEvent<HTMLFormElement>) => {
@@ -26,16 +31,15 @@ const Register = () => {
       api
         .post("/users/new", data)
         .then((response) => {
-          if (response.status === 200) {
-            // navigate("/login");
-
+          if (response.status === 201) {
+            showModal()
           }
         })
         .catch((error) => {
           setError(error.response.data.errorMessage);
         });
     },
-    [data]
+    [data, modal]
   );
 
   return (
@@ -80,7 +84,7 @@ const Register = () => {
                   title="A senha deve conter de 4 a 16 caracteres, sendo eles pelo menos uma letra minúscula, uma letra maiúscula, um número e um símbolo (!@#$%^*_=+-)"
                   onChange={(e) => setData({ ...data, password: e.target.value })}
                 />
-                <Input
+                {/* <Input
                   id="check-password"
                   content="Confirmar Senha"
                   type="password"
@@ -88,7 +92,7 @@ const Register = () => {
                   required
                   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*_=+-]).{4,16}$"
                   title="A senha deve ser idêntica à senha acima"
-                />
+                /> */}
               </div>
               <div className="flex flex-col items-center">
                 <Button
@@ -114,54 +118,15 @@ const Register = () => {
           </div>
         </div>
       </div>
+      {modal && (
+        <div>
+          <div className="w-60 h-fit top-80 left-20 fixed">
+            <CreateAccountSucess />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 export default Register;
-
-/*<div>
-<label htmlFor="password" className="sr-only">
-  Password
-</label>
-<p className="text-sm py-2">Senha</p>
-<input
-  id="password"
-  // name="password"
-  type="password"
-  autoComplete="current-password"
-  //CONSERTAR O 'pattern.value'
-  //COMPONETIZAR
-  // {...register("password", // JS only: <p>error message</p> TS only support
-  //   {
-  //     required: 'Insira a senha',
-  //     pattern: {
-  //       value: /^[0-9a-zA-Z]{4,16}/i,
-  //       message: "A senha deve conter de 4-8 dígitos com uma pelo menos letra minúscula, uma maiúscula, e pelo menos um número"
-  //     }
-  //   })}
-  // pattern="[0-9a-zA-Z]{4,8}"
-  // title="A senha deve conter de 4-8 dígitos com uma pelo menos letra minúscula, uma maiúscula, e pelo menos um número"
-  // required
-  className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm shadow-sm"
-  placeholder="Crie uma senha"
-  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*_=+-]).{4,16}$"
-  title="A senha deve conter de 4 a 16 caracteres, sendo eles pelo menos uma letra minúscula, uma letra maiúscula, um número e um símbolo (!@#$%^*_=+-)"
-  required
-  onChange={(e) => { () => { setPassword(e.target.value) } }}
-/>
-/* {errors.password ? (
-<>
-  {errors.password.type === "required" && (
-    <p style={{ color: "red", fontSize: "15px" }}>
-      {errors.password.message}
-    </p>
-  )}
-  {errors.password.type === "pattern" && (
-    <p style={{ color: "red", fontSize: "15px" }}>
-      {errors.password.message}
-    </p>
-  )}
-</>
-) : null} 
-</div>*/

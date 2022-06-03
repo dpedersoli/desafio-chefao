@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react'
 import api from "../services/api";
 
-import Logo from "./logo";
-
 import TaskOne from '../images/icons/day-1-tasks/task-1.png'
 import TaskTwo from '../images/icons/day-1-tasks/task-2.png'
 import TaskThree from '../images/icons/day-1-tasks/task-3.png'
 import TaskFour from '../images/icons/day-1-tasks/task-4.png'
 import DayOne from '../images/icons/day-1-tasks/day-1-icon.png'
-import DayTwo from '../images/icons/day-2-tasks/day-2-icon.png'
+import DayTwo from '../images/icons/day-1-tasks/day-2-icon.png'
 import Avatar from '/src/images/perfil-badge.png'
 import Points from '/src/images/icons/pontos.png'
 import IconPerson from '/src/images/icons/plano.png'
@@ -58,55 +56,69 @@ const HomeTasks = () => {
   ]
   return (
     <div >
-      <div className="px-7 ">
-        <Logo />
+      <div className="mx-7">
         <div className="flex items-center pl-1">
-          <div>
-            <img src={Avatar} alt="imagem de perfil do usuário" />
-          </div>
-          <div className="flex flex-col w-36 items-center justify-center">
-            <div>
-              <p className="mt-1 mb-2 text-center text-xl font-bold text-gray-900">Olá, {data.name}!</p>
-            </div>
-            <div className="flex items-center border rounded-[44px] py-1 px-3">
+          <img src={Avatar} alt="imagem de perfil do usuário" />
+          <div className="flex flex-col w-fit">
+            <p className="mt-1 mb-2 text-center text-xl font-bold text-gray-900">Olá, {data.name}!</p>
+            <div className="flex items-center border rounded-full bg-white py-1 px-3 h-10">
               <img className="w-4 h-4" src={Points} alt="pontuação do usuário" />
-              <div className="flex flex-col ml-1">
-                <span className="text-[8px]">UP Pontos</span>
+              <div className="flex flex-col px-3">
+                <span className="text-xs font-bold">UP Pontos</span>
                 {/* Verificar cor correta */}
-                <span className="text-[8px] text-sky-600">10</span>
+                <span className="text-sm text-blue-600 font-bold">10</span>
               </div>
-              <hr className="border-l-2 h-5 m-1" />
-              <img className="mx-1 w-4 h-4" src={IconPerson} alt="pontuação do usuário" />
-              <div className="flex flex-col">
-                <span className="text-[8px]">Plano</span>
+              <hr className="border-l-2 h-6  mx-1" />
+              <img className="w-4 h-4" src={IconPerson} alt="pontuação do usuário" />
+              <div className="flex flex-col px-2">
+                <span className="text-xs font-bold">Plano</span>
                 {/* Verificar cor correta */}
-                <span className="text-[8px] text-sky-600">Free</span>
+                <span className="text-sm text-blue-600 font-bold">Free</span>
               </div>
             </div>
           </div>
         </div>
-        <div className="my-5">
+        <div className="mt-5 mb-10">
           <p>Você está na jornada <b>“Poupar Dinheiro”</b>. Cumpra as tarefas para atingir suas metas!</p>
         </div>
-        <div className="mb-3">
-          {/* Verificar cor correta */}
-          <p className="text-center text-xl font-bold text-sky-600">Minhas Tarefas</p>
-        </div>
+        <p className="mb-3 text-center text-2xl font-bold">Minhas Tarefas</p>
         <table>
-          <thead >
+          <thead>
             <tr>
               <th className="w-10 h-10"><img src={DayOne} alt="Tarefas do dia 1" /></th>
-              <th>Iniciante <span className="text-xs">(dia 1)</span></th>
+              <th>Iniciante <span className="text-xs font-normal">(dia 1)</span></th>
             </tr>
           </thead>
           <tbody>
             {tasks.map((task) => {
               return (
                 <tr key={task.id}>
-                  <td className="text-center " ></td>
+                  <td className="text-center" ></td>
                   <td className="flex items-center">
-                    <img className="w-12 h-12" src={task.icon} alt={task.description} />
-                    <span className="text-xs ml-3">{task.description}</span>
+                    <img className="w-12 h-12 m-1" src={task.icon} alt={task.description} />
+                    <span className="text-sm ml-3 w-60">{task.description}</span>
+                  </td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+
+        <table>
+          <thead>
+            <tr>
+              <th className="w-10 h-10"><img src={DayTwo} alt="Tarefas do dia 1" /></th>
+              <th>Aprendiz das Finanças <span className="text-xs font-normal">(dia 2)</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            {tasks.map((task) => {
+              return (
+                <tr key={task.id}>
+                  <td className="text-center" ></td>
+                  <td className="flex items-center">
+                    <img className="w-12 h-12 m-1" src={task.icon} alt={task.description} />
+                    <span className="text-sm ml-3 w-60">{task.description}</span>
                   </td>
                 </tr>
               )
