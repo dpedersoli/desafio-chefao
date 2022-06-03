@@ -14,7 +14,7 @@ export default function PasswordChange() {
   const [data, setData] = useState<Profile>({} as Profile);
   const [message, setMessage] = useState("");
   const [textColor, setTextColor] = useState("");
-  let params = useParams();
+  const urlParams = new URLSearchParams(window.location.search);
 
   const handleSubmit = useCallback(
     (e: FormEvent<HTMLFormElement>) => {
@@ -22,7 +22,7 @@ export default function PasswordChange() {
       api
         .put("/users/password-change", data, {
           headers: {
-            Authorization: `Basic ${params.token}`,
+            Authorization: `Bearer ${urlParams.get("token")}`,
             "Content-Type": "application/json",
             Accept: "application/json",
           },

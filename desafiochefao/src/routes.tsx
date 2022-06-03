@@ -22,7 +22,7 @@ const AppRoutes = () => {
         <Route path="/login" element={isAuthenticated ? <Home /> : <Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/password-recovery" element={<PasswordRecovery />} />
-        <Route path="/password-change/:token" element={<PasswordChange />} />
+        <Route path="/password-change" element={<PasswordChange />} />
         <Route path="/goal" element={<Goal />} />
         <Route path="/tutorial" element={<Tutorial />} />
         <Route path="/intro-tutorial" element={<IntroTutorial />} />
