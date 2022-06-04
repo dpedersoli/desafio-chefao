@@ -95,7 +95,7 @@ const HomeTasks = () => {
             {tasks.map((task) => {
               return (
                 <tr key={task.id}>
-                  <td className="text-center" ></td>
+                  <td className="text-center" > <input className="border rounded-full" type="checkbox" /></td>
                   <td className="flex items-center">
                     <a href="/task-one">
                       <img className="w-12 h-12 m-1" src={task.icon} alt={task.description} />
