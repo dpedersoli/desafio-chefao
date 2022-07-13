@@ -61,7 +61,7 @@ const Register = () => {
                   pattern="[a-zA-Z- ]{2,30}$"
                   title="Apenas letras são aceitas"
                   required
-                  onChange={(e) => setData({ ...data, name: e.target.value.replace(" ", "") })}
+                  onChange={(e) => setData({ ...data, name: e.target.value })}
                 />
                 <Input
                   id="email-address"

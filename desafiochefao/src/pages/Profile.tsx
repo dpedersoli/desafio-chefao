@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import api from "../services/api";
 
@@ -22,6 +23,17 @@ interface User {
 const Profile = () => {
   const [data, setData] = useState<User>({} as User)
   let token: any = ""
+
+  let navigate = useNavigate();
+  const goalPage = () => {
+    navigate('/goal')
+  }
+  //deleta isso!
+  const fakeLogout = () => {
+    navigate('/login')
+  }
+  //deleta isso!
+
 
   useEffect(() => {
     token = localStorage.getItem("token")
@@ -71,6 +83,7 @@ const Profile = () => {
           content="Atualizar planejamento"
           customClassName="!bg-white !text-black !font-normal !w-80 mb-6"
           leftImage={Plan}
+          onClick={goalPage}
         />
         <Button
           content="Convidou - Ganhou"
@@ -81,6 +94,7 @@ const Profile = () => {
           content="Sair da conta"
           customClassName="!bg-white !text-black !font-normal !w-80"
           leftImage={Logout}
+          onClick={fakeLogout}
         />
       </div>
 

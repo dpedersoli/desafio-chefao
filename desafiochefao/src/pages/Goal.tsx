@@ -77,7 +77,7 @@ const Goal = () => {
           </div>
         </div>
       )}
-      {/* PRECISO ARRUMAR UM JEITO MELHOR DE FECHAR ESSA TELA SEM USAR ALTERAÇÃO DO ESTADO -> pois o estado só retorna para 'false' depois de 1 click p/ depois do segundo click ele mudar de novo para 'true' e abrir o modal */}
+      {/* PRECISO ARRUMAR UM JEITO MELHOR DE FECHAR ESSA TELA SEM USAR ALTERAÇÃO DO ESTADO -> pois o estado só retorna para 'false' depois de 1 click p/ depois do segundo click ele mudar de novo para 'true' e abrir o modal URGENTE */}
 
     </div>
   )
