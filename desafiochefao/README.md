@@ -22,3 +22,5 @@ Daniel Pedersoli
 #Back-end:
 Gustavo Matos, 
 Lucas Matos
+
+https://larainfo.com/blogs/install-setup-vite-react-typescript-tailwind-css-3
