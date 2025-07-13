@@ -23,11 +23,11 @@ const Tutorial = () => {
       title: "Aprenda de forma prática",
       image: imageTwo,
       imageAlt: "imagem ilustrada de mulher sentada mexendo no notebook",
-      text: "Assista a vídeo-aulas que ajudarão a economizar dinheiro de forma simples",
+      text: "Assista à videoaulas que te ajudarão a economizar dinheiro de forma simples",
     },
     {
       id: 3,
-      title: "Esteja conectada",
+      title: "Esteja conectado",
       image: imageThree,
       imageAlt: "imagem ilustrada de três estrelas verdes com moedas e notas ao redor delas",
       text: "Acesse a plataforma diariamente e ganhe pontos",
@@ -119,8 +119,8 @@ const Tutorial = () => {
             <a href="/goal"><Button content="Começar Planejamento" /></a>
             :
             <div className="flex justify-between w-full">
-              <p onClick={() => previousStep()} className="text-Slate-50 hover:text-Zinc-50 text-base">{'<'} Anterior</p>
-              <p onClick={() => nextStep('')} className="text-Slate-50 hover:text-Zinc-50 text-base">Próximo {'>'} </p>
+              <p onClick={() => previousStep()} className="text-Slate-50 hover:text-Zinc-50 text-base font-bold">{'<'} Anterior</p>
+              <p onClick={() => nextStep('')} className="text-Slate-50 hover:text-Zinc-50 text-base font-bold">Próximo {'>'} </p>
             </div>}
           {/* ///////////////////LIXO -> MUDAR PARA -> SWIPE LEFT/RIGHT -> DESCOMENTAR ACIMA //////////////////// */}
         </div>

@@ -5,7 +5,7 @@ import Button from '../components/Button'
 import api from "../services/api";
 // import Username from '../components/UserName'
 
-import IntroTutorialImage from '/src/images/intro-tutorial.png'
+import IntroTutorialImg from '/src/images/intro-tutorial.png'
 
 interface User {
   name: string;
@@ -17,7 +17,7 @@ const IntroTutorial = () => {
 
   useEffect(() => {
     token = localStorage.getItem("token")
-    api.get("/users/username", {
+    api.get("/users/userdata", {
       headers: {
         authorization: token
       }
@@ -34,7 +34,7 @@ const IntroTutorial = () => {
         <Logo customImageClassName="mb-20" />
         <div className="flex flex-col justify-evenly">
           <p className="mt-1 mb-2 text-center text-xl font-bold text-gray-900">
-            Olá! {data.name}, seja bem vinde!
+            Olá, {data.name}!
           </p>
         </div>
         <div className="flex flex-col justify-evenly">
@@ -44,7 +44,7 @@ const IntroTutorial = () => {
             meta financeira de forma prática
           </p>
         </div>
-        <img src={IntroTutorialImage} alt="imagem ilutrada de mulher branca de cabelo preto sentada sob um gráfico, mexendo em seu notebook" className="w-fit h-fit" />
+        <img src={IntroTutorialImg} alt="imagem ilutrada de mulher branca de cabelo preto sentada sob um gráfico, mexendo em seu notebook" className="w-fit h-fit" />
         <a href="/tutorial">
           <Button
             content="Veja como é Fácil"
